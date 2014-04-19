@@ -88,6 +88,10 @@
         this.iframe.contentWindow.survey();
     }
 
+    this.close = function() {
+        this.iframe.style.display = "none";
+    }
+
     this.handleResponse = function(data) {
         var _this = this;
 

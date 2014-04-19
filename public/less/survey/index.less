@@ -15,7 +15,7 @@ html body {
         opacity: 0;
         width: 300px;
         background: #fff;
-        padding: 10px;
+        border: solid 1px lighten(#000, 30%);
         overflow: hidden;
         .transition(all);
         .border-radius(3px);
@@ -23,6 +23,66 @@ html body {
 
         &.activated {
             opacity: 1;
+        }
+
+        .header {
+            padding: 6px;
+            text-align: center;
+            color: #fff;
+            font-size: 16px;
+            background: #428BCA;
+            font-weight: bold;
+            text-shadow: 0 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .stars {
+            padding: 15px;
+        }
+
+        .questionnaire {
+            padding: 10px;
+            display: none;
+        }
+
+        .footer {
+            padding: 6px 8px;
+            background: darken(#fff, 3%);
+            .clearfix();
+
+            .button {
+                padding: 4px 8px;
+                text-align: center;
+                font-size: 14px;
+                color: #fff;
+                cursor: pointer;
+                .border-radius(3px);
+                .transition(background);
+
+                &.close {
+                    background: #E84C3D;
+                    margin-right: 4px;
+
+                    &:hover {
+                        background: darken(#E84C3D, 10%);
+
+                        &:active {
+                            background: darken(#E84C3D, 20%);
+                        }
+                    }
+                }
+
+                &.send {
+                    background: #008AE6;
+
+                    &:hover {
+                        background: darken(#008AE6, 10%);
+
+                        &:active {
+                            background: darken(#008AE6, 20%);
+                        }
+                    }
+                }
+            }
         }
     }
 }
