@@ -22,7 +22,7 @@ exports.init = function(app, srv) {
 
         if(fs.statSync(path).isDirectory()) {
             $.each(fs.readdirSync(path), function(index, file) {
-                if(file != ".DS_Store") {
+                if(file && file != ".DS_Store") {
                     if(directory === "core") {
                         if(file === "external.txt") {
                             var links = fs.readFileSync(path + "/" + file, "utf-8").split("\n");
@@ -55,7 +55,7 @@ exports.init = function(app, srv) {
 
         if(fs.statSync(path).isDirectory() && directory !== "compless") {
             $.each(fs.readdirSync(path), function(index, file) {
-                if(file != ".DS_Store") {
+                if(file && file != ".DS_Store") {
                     if(directory === "core") {
                         css.addFile(path + "/" + file);
                     } else {

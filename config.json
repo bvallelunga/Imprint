@@ -61,7 +61,7 @@
             ".*"
         ],
         "max_failures": 1000,
-        "output_log": "../log.out",
-        "error_log": "../log.error"
+        "output_log": "./log.out",
+        "error_log": "./log.error"
     }
 }
