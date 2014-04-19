@@ -1,7 +1,7 @@
 (function() {
     /* Library */
-    this.host = "http://localhost/track/v1/"; //Development
-    //this.host = "http://track.imprint.com/v1/"; //Production
+    this.host = "//localhost/track/v1/"; //Development
+    //this.host = "//track.imprint.com/v1/"; //Production
 
     this.script = document.getElementById("imprint-js");
     this.params = [
@@ -37,7 +37,7 @@
             if(xhr.readyState < 4 || xhr.status !== 200) {
                 return callback(false);
             } else if(xhr.readyState === 4) {
-                return callback(true, xhr.responseText);
+                return callback(xhr.responseText);
             } else {
                 return callback(false);
             }
@@ -56,8 +56,11 @@
     }
 
     this.createIframe = function(callback) {
-        this.iframe = document.createElement("IFRAME");
+        this.iframe = document.createElement("iframe");
+        this.iframe.setAttribute("allowtransparency", "true");
 
+        this.iframe.src = this.url();
+        this.iframe.frameBorder = "0";
         this.iframe.style.width = "100%";
         this.iframe.style.height = "100%";
         this.iframe.style.display = "none";
@@ -75,24 +78,23 @@
         this.iframe.style.webkitTapHighlightColor = "transparent";
         this.iframe.onload = callback;
 
-        this.iframe.setAttribute("src", this.url());
         document.body.appendChild(this.iframe);
     }
 
-    this.popup = function() {
+    this.open = function() {
         this.iframe.style.display = "block";
         this.iframe.contentWindow.survey();
     }
 
-    this.handleResponse = function(error, data) {
+    this.handleResponse = function(data) {
         var _this = this;
 
-        if(error && data) {
+        if(data != false) {
             data = JSON.parse(data);
 
             if(data.success && data.show) {
                 _this.createIframe(function() {
-                    setTimeout(_this.popup, data.delay);
+                    setTimeout(_this.open, data.delay);
                 });
             }
         }
