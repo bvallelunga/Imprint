@@ -1,3 +1,3 @@
 $(function() {
-    $(".error div").vAlign();
+    $(".error").vAlign();
 });

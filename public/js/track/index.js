@@ -81,7 +81,7 @@
 
     this.popup = function() {
         this.iframe.style.display = "block";
-        this.iframe.contentWindow.activate();
+        this.iframe.contentWindow.survey();
     }
 
     this.handleResponse = function(error, data) {

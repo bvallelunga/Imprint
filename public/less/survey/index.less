@@ -1,0 +1,11 @@
+@import '../compless/all';
+@import '../core/colors';
+
+html body {
+    background: transparent;
+    .transition(background);
+
+    &.activated {
+        background: rgba(0,0,0,0.6);
+    }
+}

@@ -12,7 +12,7 @@ exports.check = function(req, res, next) {
 
 exports.survey = function(req, res, next) {
     res.render("survey", {
-        js: req.js.renderTags(),
-        css: req.css.renderTags()
+        js: req.js.renderTags("survey"),
+        css: req.css.renderTags("survey")
     });
 }
