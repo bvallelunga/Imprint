@@ -1,13 +1,151 @@
 Start assets generation for 'js'
 Start assets generation for 'css'
-[90mGET / [32m200 [90m8ms[0m
-[90mGET /feedback.js/ [32m200 [90m2ms[0m
-[90mGET /favicon/32.png/?rand=912114 [32m200 [90m2ms[0m
-[90mGET /favicon/32.png/?rand=912114 [36m304 [90m2ms[0m
-[90mGET /favicon/32.png/?rand=912114 [36m304 [90m2ms[0m
-[90mGET / [36m304 [90m1ms[0m
-[90mGET /feedback.js/ [36m304 [90m1ms[0m
-[90mGET /favicon/32.png/?rand=912114 [36m304 [90m2ms[0m
-[90mGET /favicon/32.png/?rand=912114 [36m304 [90m1ms[0m
-[90mGET /favicon/32.png/?rand=912114 [36m304 [90m0ms[0m
-[90mGET /favicon/32.png/?rand=912114 [36m304 [90m1ms[0m
+[90mGET / [32m200 [90m30ms[0m
+[90mGET /track.js/ [32m200 [90m4ms[0m
+[90mGET /track/v1/check/?user=wfSHq3R1lwlBpOVd&url=http://localhost/ [32m200 [90m2ms - 54b[0m
+[90mGET /track/v1/ [32m200 [90m34ms[0m
+[90mGET /favicon/32.png/?rand=998421 [32m200 [90m3ms[0m
+[90mGET /favicon/32.png/?rand=998421 [32m200 [90m3ms[0m
+[90mGET /track.js/ [36m304 [90m2ms[0m
+[90mGET /track/v1/check/?user=wfSHq3R1lwlBpOVd&url=http://localhost/track/v1/ [32m200 [90m1ms - 54b[0m
+[90mGET /track/v1/ [32m200 [90m14ms[0m
+[90mGET /favicon/32.png/?rand=998421 [32m200 [90m3ms[0m
+[90mGET /track.js/ [36m304 [90m2ms[0m
+[90mGET /favicon/32.png/?rand=998421 [32m200 [90m2ms[0m
+[90mGET /track/v1/check/?user=wfSHq3R1lwlBpOVd&url=http://localhost/track/v1/ [36m304 [90m1ms[0m
+[90mGET /favicon/32.png/?rand=998421 [32m200 [90m2ms[0m
+[90mGET /favicon/32.png/?rand=998421 [32m200 [90m2ms[0m
+Start assets generation for 'js'
+Start assets generation for 'css'
+Start assets generation for 'js'
+Start assets generation for 'css'
+Start assets generation for 'js'
+Start assets generation for 'css'
+Start assets generation for 'js'
+Start assets generation for 'css'
+Start assets generation for 'js'
+Start assets generation for 'css'
+[90mGET / [32m200 [90m25ms[0m
+[90mGET /track.js/ [36m304 [90m2ms[0m
+[90mGET /track/v1/check/?user=wfSHq3R1lwlBpOVd&url=http://localhost/ [36m304 [90m2ms[0m
+[90mGET /track/v1/ [32m200 [90m3ms - 54b[0m
+[90mGET /favicon/32.png/?rand=110459 [32m200 [90m4ms[0m
+[90mGET /favicon/32.png/?rand=110459 [32m200 [90m2ms[0m
+[90mGET /favicon/32.png/?rand=110459 [32m200 [90m2ms[0m
+Start assets generation for 'js'
+Start assets generation for 'css'
+Start assets generation for 'js'
+Start assets generation for 'css'
+Start assets generation for 'js'
+Start assets generation for 'css'
+Start assets generation for 'js'
+Start assets generation for 'css'
+[90mGET / [32m200 [90m21ms[0m
+[90mGET /track.js/ [36m304 [90m3ms[0m
+[90mGET /track/v1/check/?user=wfSHq3R1lwlBpOVd&url=http://localhost/ [36m304 [90m2ms[0m
+{ [Error: Failed to lookup view "/survey" in views directory "/Users/Brian/Sites/Imprint/views"]
+  view: 
+   { name: '/survey',
+     root: '/Users/Brian/Sites/Imprint/views',
+     defaultEngine: 'html',
+     ext: '.html',
+     engine: [Function],
+     path: undefined } }
+[90mGET /track/v1/ [31m500 [90m6ms[0m
+[90mGET /favicon/32.png/?rand=631203 [32m200 [90m2ms[0m
+[90mGET /favicon/32.png/?rand=631203 [32m200 [90m2ms[0m
+[90mGET /favicon/32.png/?rand=631203 [32m200 [90m3ms[0m
+[90mGET / [32m200 [90m11ms[0m
+[90mGET /track.js/ [36m304 [90m2ms[0m
+[90mGET /track/v1/check/?user=wfSHq3R1lwlBpOVd&url=http://localhost/ [36m304 [90m3ms[0m
+{ [Error: Failed to lookup view "/survey" in views directory "/Users/Brian/Sites/Imprint/views"]
+  view: 
+   { name: '/survey',
+     root: '/Users/Brian/Sites/Imprint/views',
+     defaultEngine: 'html',
+     ext: '.html',
+     engine: [Function],
+     path: undefined } }
+[90mGET /track/v1/ [31m500 [90m4ms[0m
+[90mGET /favicon/32.png/?rand=356297 [32m200 [90m2ms[0m
+[90mGET /favicon/32.png/?rand=356297 [32m200 [90m2ms[0m
+[90mGET /favicon/32.png/?rand=356297 [32m200 [90m2ms[0m
+Start assets generation for 'js'
+Start assets generation for 'css'
+[90mGET / [32m200 [90m26ms[0m
+[90mGET /track.js/ [36m304 [90m2ms[0m
+[90mGET /track/v1/check/?user=wfSHq3R1lwlBpOVd&url=http://localhost/ [36m304 [90m1ms[0m
+{ [Error: ENOENT, no such file or directory '/Users/Brian/Sites/Imprint/views/survey/includes/start.html']
+  errno: 34,
+  code: 'ENOENT',
+  path: '/Users/Brian/Sites/Imprint/views/survey/includes/start.html',
+  syscall: 'open' }
+[90mGET /track/v1/ [31m500 [90m5ms - 998b[0m
+[90mGET /favicon/32.png/?rand=296880 [32m200 [90m9ms[0m
+[90mGET /favicon/32.png/?rand=296880 [32m200 [90m2ms[0m
+[90mGET /favicon/32.png/?rand=296880 [32m200 [90m3ms[0m
+Start assets generation for 'js'
+Start assets generation for 'css'
+Start assets generation for 'js'
+Start assets generation for 'css'
+[90mGET / [32m200 [90m23ms[0m
+[90mGET /track.js/ [36m304 [90m2ms[0m
+[90mGET /track/v1/check/?user=wfSHq3R1lwlBpOVd&url=http://localhost/ [36m304 [90m2ms[0m
+{ [Error: ENOENT, no such file or directory '/Users/Brian/Sites/Imprint/views/survey/includes/start.html']
+  errno: 34,
+  code: 'ENOENT',
+  path: '/Users/Brian/Sites/Imprint/views/survey/includes/start.html',
+  syscall: 'open' }
+[90mGET /track/v1/ [31m500 [90m5ms - 998b[0m
+[90mGET /favicon/32.png/?rand=361540 [32m200 [90m4ms[0m
+[90mGET /favicon/32.png/?rand=361540 [32m200 [90m2ms[0m
+[90mGET /favicon/32.png/?rand=361540 [32m200 [90m2ms[0m
+Start assets generation for 'js'
+Start assets generation for 'css'
+[90mGET / [32m200 [90m25ms[0m
+[90mGET /track.js/ [36m304 [90m6ms[0m
+[90mGET /track/v1/check/?user=wfSHq3R1lwlBpOVd&url=http://localhost/ [36m304 [90m2ms[0m
+{ [ReferenceError: /Users/Brian/Sites/Imprint/views/survey/index.html:7
+
+
+css is not defined] path: '/Users/Brian/Sites/Imprint/views/survey/index.html' }
+[90mGET /track/v1/ [31m500 [90m9ms[0m
+[90mGET /favicon/32.png/?rand=376990 [32m200 [90m3ms[0m
+[90mGET /favicon/32.png/?rand=376990 [32m200 [90m14ms[0m
+[90mGET /favicon/32.png/?rand=376990 [32m200 [90m3ms[0m
+[90mGET / [32m200 [90m15ms[0m
+[90mGET /track.js/ [36m304 [90m3ms[0m
+[90mGET /track/v1/check/?user=wfSHq3R1lwlBpOVd&url=http://localhost/ [36m304 [90m1ms[0m
+{ [ReferenceError: /Users/Brian/Sites/Imprint/views/survey/index.html:7
+
+
+css is not defined] path: '/Users/Brian/Sites/Imprint/views/survey/index.html' }
+[90mGET /track/v1/ [31m500 [90m5ms[0m
+[90mGET /favicon/32.png/?rand=31411 [32m200 [90m2ms[0m
+[90mGET /favicon/32.png/?rand=31411 [32m200 [90m2ms[0m
+[90mGET /favicon/32.png/?rand=31411 [32m200 [90m2ms[0m
+Start assets generation for 'js'
+Start assets generation for 'css'
+[90mGET / [32m200 [90m25ms[0m
+[90mGET /track.js/ [36m304 [90m3ms[0m
+[90mGET /track/v1/check/?user=wfSHq3R1lwlBpOVd&url=http://localhost/ [36m304 [90m2ms[0m
+[90mGET /track/v1/ [31m500 [90m5ms - 998b[0m
+[90mGET /favicon/32.png/?rand=785878 [32m200 [90m4ms[0m
+[90mGET /favicon/32.png/?rand=785878 [32m200 [90m2ms[0m
+[90mGET /favicon/32.png/?rand=785878 [32m200 [90m15ms[0m
+[90mGET / [32m200 [90m16ms[0m
+[90mGET /track.js/ [36m304 [90m3ms[0m
+[90mGET /track/v1/check/?user=wfSHq3R1lwlBpOVd&url=http://localhost/ [36m304 [90m3ms[0m
+[90mGET /track/v1/ [31m500 [90m4ms - 998b[0m
+[90mGET /favicon/32.png/?rand=479779 [32m200 [90m3ms[0m
+[90mGET /favicon/32.png/?rand=479779 [32m200 [90m2ms[0m
+[90mGET /favicon/32.png/?rand=479779 [32m200 [90m2ms[0m
+Start assets generation for 'js'
+Start assets generation for 'css'
+[90mGET / [32m200 [90m23ms[0m
+[90mGET /track.js/ [36m304 [90m2ms[0m
+[90mGET /track/v1/check/?user=wfSHq3R1lwlBpOVd&url=http://localhost/ [36m304 [90m3ms[0m
+[90mGET /track/v1/ [32m200 [90m36ms[0m
+[90mGET /favicon/32.png/?rand=34647 [32m200 [90m3ms[0m
+[90mGET /favicon/32.png/?rand=34647 [32m200 [90m2ms[0m
+[90mGET /favicon/32.png/?rand=34647 [32m200 [90m2ms[0m

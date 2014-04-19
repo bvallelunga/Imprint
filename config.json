@@ -1,6 +1,6 @@
 {
     "general": {
-        "production": true,
+        "production": false,
         "port": 80,
         "company": "Imprint",
         "delimeter": {
@@ -11,7 +11,7 @@
             "Imprint gives humanized insights that help drive the evolution of our product."
         ],
         "default": "/",
-        "subdomains": [ "", "api" ]
+        "subdomains": [ "", "track" ]
     },
     "development": {
         "debugger": {

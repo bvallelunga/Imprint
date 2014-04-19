@@ -1,7 +1,7 @@
 (function() {
     /* Library */
-    this.host = "http://localhost:3000/api/v1/"; //Development
-    //this.host = "http://api.imprint.com/v1/"; //Production
+    this.host = "http://localhost/track/v1/"; //Development
+    //this.host = "http://track.imprint.com/v1/"; //Production
 
     this.script = document.getElementById("imprint-js");
     this.params = [
