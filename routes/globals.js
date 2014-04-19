@@ -26,8 +26,33 @@ module.exports = function(req, res, next) {
         ll: [null, null]
     };
 
-    //Session Save
-    req.session.save();
+    //Success JSON Response
+    res.success = function(data) {
+        if(Array.isArray(data)) {
+            data = {
+                success: true,
+                content: data
+            }
+        } else {
+            data.success = true;
+        }
+
+        res.json(data);
+    }
+
+    //Failure JSON Response
+    res.failure = function(data) {
+        if(Array.isArray(data)) {
+            data = {
+                success: false,
+                content: data
+            }
+        } else {
+            data.success = false;
+        }
+
+        res.json(data);
+    }
 
     //Locals
     res.locals.csrf = (req.csrfToken) ? req.csrfToken() : "";
@@ -66,4 +91,7 @@ module.exports = function(req, res, next) {
     } else {
         res.redirect(req.protocol + "://" + req.host.split(".").slice(1).join(".") + req.path);
     }
+
+    //Session Save
+    req.session.save();
 }

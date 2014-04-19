@@ -2,6 +2,7 @@
 var express    = require("express");
 var device     = require("express-device");
 var slashes    = require("connect-slashes");
+var subdomains = require('express-subdomains');
 var app        = express();
 var srv        = require('http').createServer(app);
 var ejs        = require("ejs");
@@ -57,6 +58,17 @@ app.configure(function() {
 
     //Initialize Models
     app.use(lib.models);
+
+    //Setup Subdomains
+    async.each(config.general.subdomains, function(subdomain, next) {
+        if(subdomain != "") {
+            subdomains.use(subdomain);
+        }
+
+        next();
+    }, function() {
+        app.use(subdomains.middleware);
+    });
 
     //Setup Globals
     app.use(require("./routes/globals"));

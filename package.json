@@ -5,6 +5,7 @@
   "dependencies": {
     "express": "3.5.1",
     "express-device": "0.3.7",
+    "express-subdomains": "0.0.5",
     "express-error": "0.0.7",
     "connect-slashes": "0.0.10",
     "ejs": "0.8.4",

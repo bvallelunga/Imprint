@@ -1,6 +1,8 @@
 (function() {
     /* Library */
-    this.url = "http://localhost:3000/feedback/";
+    this.host = "http://localhost:3000/api/v1/"; //Development
+    //this.host = "http://api.imprint.com/v1/"; //Production
+
     this.script = document.getElementById("imprint-js");
     this.params = [
         "user=" + script.getAttribute("data-key"),
@@ -41,17 +43,61 @@
             }
         }
 
-        xhr.open('GET', url, true);
-        xhr.send(params);
+        xhr.open('GET', url + "?" + params, true);
+        xhr.send();
+    }
+
+    this.url = function(url) {
+        if(url) {
+            return this.host + url + "/";
+        } else {
+            return this.host;
+        }
+    }
+
+    this.createIframe = function(callback) {
+        this.iframe = document.createElement("IFRAME");
+
+        this.iframe.style.width = "100%";
+        this.iframe.style.height = "100%";
+        this.iframe.style.display = "none";
+        this.iframe.style.position = "fixed";
+        this.iframe.style.top = "0";
+        this.iframe.style.left = "0";
+        this.iframe.style.zIndex = "999999";
+        this.iframe.style.backgroundColor = "transparent";
+        this.iframe.style.border = "0 none transparent";
+        this.iframe.style.overflowX = "hidden";
+        this.iframe.style.overflowY = "auto";
+        this.iframe.style.visibility = "visible";
+        this.iframe.style.margin = "0";
+        this.iframe.style.padding = "0";
+        this.iframe.style.webkitTapHighlightColor = "transparent";
+        this.iframe.onload = callback;
+
+        this.iframe.setAttribute("src", this.url());
+        document.body.appendChild(this.iframe);
+    }
+
+    this.popup = function() {
+        this.iframe.style.display = "block";
+        this.iframe.contentWindow.activate();
     }
 
     this.handleResponse = function(error, data) {
+        var _this = this;
+
         if(error && data) {
-            console.log(data);
+            data = JSON.parse(data);
+
+            if(data.success && data.show) {
+                _this.createIframe(function() {
+                    setTimeout(_this.popup, data.delay);
+                });
+            }
         }
     }
 
     /* Initalize */
-    this.request(this.url, this.params, this.handleResponse);
-
+    this.request(this.url("check"), this.params, this.handleResponse);
 })();
