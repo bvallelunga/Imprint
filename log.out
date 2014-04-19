@@ -137,3 +137,132 @@ Start assets generation for 'css'
 [90mGET /track.js/ [36m304 [90m2ms[0m
 [90mGET /track/v1/check/?user=wfSHq3R1lwlBpOVd&url=http://brian.dev.laborate.io/news/ [36m304 [90m2ms[0m
 [90mGET /track/v1/ [32m200 [90m10ms[0m
+[90mGET /track.js/ [36m304 [90m1ms[0m
+[90mGET /track/v1/check/?user=wfSHq3R1lwlBpOVd&url=http://brian.dev.laborate.io/news/ [36m304 [90m1ms[0m
+[90mGET /track/v1/ [32m200 [90m13ms[0m
+Start assets generation for 'js'
+Start assets generation for 'css'
+[90mGET /track/v1/ [32m200 [90m30ms[0m
+[90mGET / [33m404 [90m16ms[0m
+[90mGET /track.js/ [32m200 [90m3ms[0m
+[90mGET /track/v1/check/?user=wfSHq3R1lwlBpOVd&url=http://localhost/ [36m304 [90m2ms[0m
+[90mGET /track/v1/ [32m200 [90m12ms[0m
+[90mGET /favicon/32.png/?rand=245710 [33m404 [90m2ms - 4b[0m
+[90mGET / [33m404 [90m10ms[0m
+[90mGET /track.js/ [36m304 [90m1ms[0m
+[90mGET /track/v1/check/?user=wfSHq3R1lwlBpOVd&url=http://localhost/ [36m304 [90m1ms[0m
+[90mGET /track/v1/ [32m200 [90m11ms[0m
+[90mGET /favicon/32.png/?rand=258188 [33m404 [90m10ms - 4b[0m
+[90mGET / [33m404 [90m8ms[0m
+[90mGET /track.js/ [36m304 [90m0ms[0m
+[90mGET /track/v1/check/?user=wfSHq3R1lwlBpOVd&url=http://localhost/ [36m304 [90m1ms[0m
+[90mGET /track/v1/ [32m200 [90m13ms[0m
+[90mGET /favicon/32.png/?rand=437886 [33m404 [90m2ms - 4b[0m
+[90mGET / [33m404 [90m10ms[0m
+[90mGET /track.js/ [36m304 [90m1ms[0m
+[90mGET /track/v1/check/?user=wfSHq3R1lwlBpOVd&url=http://localhost/ [36m304 [90m1ms[0m
+[90mGET /track/v1/ [32m200 [90m12ms[0m
+[90mGET /favicon/32.png/?rand=906867 [33m404 [90m2ms - 4b[0m
+[90mGET / [33m404 [90m9ms[0m
+[90mGET /track.js/ [36m304 [90m1ms[0m
+[90mGET /track/v1/check/?user=wfSHq3R1lwlBpOVd&url=http://localhost/ [36m304 [90m0ms[0m
+[90mGET /track/v1/ [32m200 [90m10ms[0m
+[90mGET /favicon/32.png/?rand=24936 [33m404 [90m2ms - 4b[0m
+[90mGET / [33m404 [90m8ms[0m
+[90mGET /track.js/ [36m304 [90m1ms[0m
+[90mGET /track/v1/check/?user=wfSHq3R1lwlBpOVd&url=http://localhost/ [36m304 [90m0ms[0m
+[90mGET /track/v1/ [32m200 [90m13ms[0m
+[90mGET /favicon/32.png/?rand=987837 [33m404 [90m3ms - 4b[0m
+[90mGET / [33m404 [90m8ms[0m
+[90mGET /track.js/ [36m304 [90m1ms[0m
+[90mGET /track/v1/check/?user=wfSHq3R1lwlBpOVd&url=http://localhost/ [36m304 [90m1ms[0m
+[90mGET /track/v1/ [32m200 [90m13ms[0m
+[90mGET /favicon/32.png/?rand=447734 [33m404 [90m2ms - 4b[0m
+[90mGET /favicon/32.png/?rand=447734 [33m404 [90m2ms - 4b[0m
+Start assets generation for 'js'
+Start assets generation for 'css'
+[90mGET / [33m404 [90m28ms[0m
+[90mGET /track.js/ [36m304 [90m3ms[0m
+[90mGET /track/v1/check/?user=wfSHq3R1lwlBpOVd&url=http://localhost/ [32m200 [90m2ms - 54b[0m
+[90mGET /track/v1/ [32m200 [90m18ms[0m
+[90mGET /favicon/32.png/?rand=853293 [33m404 [90m2ms - 4b[0m
+[90mGET / [33m404 [90m9ms[0m
+[90mGET /track.js/ [36m304 [90m1ms[0m
+[90mGET /track/v1/check/?user=wfSHq3R1lwlBpOVd&url=http://localhost/ [36m304 [90m2ms[0m
+[90mGET /track/v1/ [32m200 [90m11ms[0m
+[90mGET /favicon/32.png/?rand=365929 [33m404 [90m2ms - 4b[0m
+[90mGET / [33m404 [90m10ms[0m
+[90mGET /track.js/ [36m304 [90m1ms[0m
+[90mGET /track/v1/check/?user=wfSHq3R1lwlBpOVd&url=http://localhost/ [36m304 [90m1ms[0m
+[90mGET /track/v1/ [32m200 [90m12ms[0m
+[90mGET /favicon/32.png/?rand=44026 [33m404 [90m31ms - 4b[0m
+Start assets generation for 'js'
+Start assets generation for 'css'
+[90mGET / [33m404 [90m27ms[0m
+[90mGET /track.js/ [32m200 [90m4ms[0m
+[90mGET /track/v1/check/?user=wfSHq3R1lwlBpOVd&host=localhost&path=/&port= [31m500 [90m3ms - 998b[0m
+[90mGET /favicon/32.png/?rand=333475 [33m404 [90m2ms - 4b[0m
+[90mGET / [33m404 [90m12ms[0m
+[90mGET /track.js/ [36m304 [90m2ms[0m
+[90mGET /track/v1/check/?user=wfSHq3R1lwlBpOVd&host=localhost&path=/&port= [31m500 [90m2ms - 998b[0m
+[90mGET /favicon/32.png/?rand=92521 [33m404 [90m1ms - 4b[0m
+[90mGET / [33m404 [90m9ms[0m
+[90mGET /track.js/ [36m304 [90m1ms[0m
+[90mGET /track/v1/check/?user=wfSHq3R1lwlBpOVd&host=localhost&path=/&port= [31m500 [90m1ms - 998b[0m
+[90mGET /favicon/32.png/?rand=192142 [33m404 [90m1ms - 4b[0m
+[90mGET / [33m404 [90m11ms[0m
+[90mGET /track.js/ [36m304 [90m1ms[0m
+[90mGET /track/v1/check/?user=wfSHq3R1lwlBpOVd&host=localhost&path=/&port= [31m500 [90m2ms - 998b[0m
+[90mGET /favicon/32.png/?rand=41253 [33m404 [90m2ms - 4b[0m
+[90mGET /favicon/32.png/?rand=41253 [33m404 [90m1ms - 4b[0m
+[90mGET / [33m404 [90m10ms[0m
+[90mGET /track.js/ [36m304 [90m7ms[0m
+[90mGET /track/v1/check/?user=wfSHq3R1lwlBpOVd&host=localhost&path=/&port= [31m500 [90m1ms - 998b[0m
+[90mGET /favicon/32.png/?rand=250888 [33m404 [90m1ms - 4b[0m
+[90mGET /favicon/32.png/?rand=250888 [33m404 [90m1ms - 4b[0m
+[90mGET / [33m404 [90m9ms[0m
+[90mGET /track.js/ [36m304 [90m1ms[0m
+[90mGET /track/v1/check/?user=wfSHq3R1lwlBpOVd&host=localhost&path=/&port= [31m500 [90m1ms - 998b[0m
+[90mGET /favicon/32.png/?rand=700770 [33m404 [90m2ms - 4b[0m
+[90mGET / [33m404 [90m8ms[0m
+[90mGET /track.js/ [36m304 [90m2ms[0m
+[90mGET /track/v1/check/?user=wfSHq3R1lwlBpOVd&host=localhost&path=/&port= [31m500 [90m2ms - 998b[0m
+[90mGET /favicon/32.png/?rand=682169 [33m404 [90m1ms - 4b[0m
+[90mGET / [33m404 [90m10ms[0m
+[90mGET /track.js/ [36m304 [90m1ms[0m
+[90mGET /track/v1/check/?user=wfSHq3R1lwlBpOVd&host=localhost&path=/&port= [31m500 [90m2ms - 998b[0m
+[90mGET /favicon/32.png/?rand=136031 [33m404 [90m1ms - 4b[0m
+[90mGET / [33m404 [90m13ms[0m
+Start assets generation for 'js'
+Start assets generation for 'css'
+[90mGET / [33m404 [90m24ms[0m
+[90mGET /track.js/ [32m200 [90m4ms[0m
+[90mGET /track/v1/check/?user%3DwfSHq3R1lwlBpOVd%26host%3Dlocalhost%26path%3D%2F%26port%3D [31m500 [90m5ms - 998b[0m
+[90mGET /favicon/32.png/?rand=507089 [33m404 [90m3ms - 4b[0m
+[90mGET / [33m404 [90m15ms[0m
+[90mGET /track.js/ [36m304 [90m2ms[0m
+[90mGET /track/v1/check/?user%3DwfSHq3R1lwlBpOVd%26host%3Dlocalhost%26path%3D%2F%26port%3D [31m500 [90m1ms - 998b[0m
+[90mGET /favicon/32.png/?rand=184767 [33m404 [90m2ms - 4b[0m
+Start assets generation for 'js'
+Start assets generation for 'css'
+[90mGET / [33m404 [90m24ms[0m
+[90mGET /track.js/ [32m200 [90m3ms[0m
+[90mGET /track/v1/check/?user=wfSHq3R1lwlBpOVd&host=localhost&path=%2F&port= [32m200 [90m2ms - 54b[0m
+[90mGET /track/v1/ [32m200 [90m20ms[0m
+[90mGET /favicon/32.png/?rand=566449 [33m404 [90m2ms - 4b[0m
+[90mGET /asdf/ [33m404 [90m10ms[0m
+[90mGET /track.js/ [36m304 [90m1ms[0m
+[90mGET /track/v1/check/?user=wfSHq3R1lwlBpOVd&host=localhost&path=%2Fasdf%2F&port= [32m200 [90m1ms - 55b[0m
+[90mGET /favicon/32.png/?rand=424274 [33m404 [90m1ms - 4b[0m
+[90mGET / [33m404 [90m10ms[0m
+[90mGET /track.js/ [36m304 [90m1ms[0m
+[90mGET /track/v1/check/?user=wfSHq3R1lwlBpOVd&host=localhost&path=%2F&port= [36m304 [90m2ms[0m
+[90mGET /track/v1/ [32m200 [90m11ms[0m
+[90mGET /favicon/32.png/?rand=926109 [33m404 [90m1ms - 4b[0m
+Start assets generation for 'js'
+Start assets generation for 'css'
+[90mGET / [33m404 [90m25ms[0m
+[90mGET /track.js/ [36m304 [90m2ms[0m
+[90mGET /track/v1/check/?user=wfSHq3R1lwlBpOVd&host=localhost&path=%2F&port= [36m304 [90m2ms[0m
+[90mGET /track/v1/ [32m200 [90m16ms[0m
+[90mGET /favicon/32.png/?rand=165806 [33m404 [90m1ms - 4b[0m

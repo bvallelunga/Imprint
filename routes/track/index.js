@@ -5,8 +5,8 @@ exports.index = function(req, res, next) {
 
 exports.check = function(req, res, next) {
     res.success({
-        show: true,
-        delay: 5000
+        show: (req.param("path") == "/"),
+        delay: 1000
     });
 }
 

@@ -6,6 +6,23 @@ html body {
     .transition(background);
 
     &.activated {
-        background: rgba(255, 255, 255,0.5);
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    .survey {
+        position: absolute;
+        top: -500px;
+        opacity: 0;
+        width: 300px;
+        background: #fff;
+        padding: 10px;
+        overflow: hidden;
+        .transition(all);
+        .border-radius(3px);
+        .box-shadow(0 1px 4px rgba(0, 0, 0, 0.5));
+
+        &.activated {
+            opacity: 1;
+        }
     }
 }

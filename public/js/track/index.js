@@ -6,7 +6,9 @@
     this.script = document.getElementById("imprint-js");
     this.params = [
         "user=" + script.getAttribute("data-key"),
-        "url=" + window.location.href
+        "host=" + encodeURIComponent(window.location.hostname),
+        "path=" + encodeURIComponent(window.location.pathname),
+        "port=" + encodeURIComponent(window.location.port)
     ].join("&");
 
     this.request = function(url, params, callback) {

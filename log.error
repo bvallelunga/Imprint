@@ -52,3 +52,131 @@ connect.limit() will be removed in connect 3.0
 connect.multipart() will be removed in connect 3.0
 visit https://github.com/senchalabs/connect/wiki/Connect-3.0 for alternatives
 connect.limit() will be removed in connect 3.0
+connect.multipart() will be removed in connect 3.0
+visit https://github.com/senchalabs/connect/wiki/Connect-3.0 for alternatives
+connect.limit() will be removed in connect 3.0
+connect.multipart() will be removed in connect 3.0
+visit https://github.com/senchalabs/connect/wiki/Connect-3.0 for alternatives
+connect.limit() will be removed in connect 3.0
+connect.multipart() will be removed in connect 3.0
+visit https://github.com/senchalabs/connect/wiki/Connect-3.0 for alternatives
+connect.limit() will be removed in connect 3.0
+ReferenceError: Invalid left-hand side in assignment
+    at exports.check (/Users/Brian/Sites/Imprint/routes/track/index.js:7:5)
+    at callbacks (/Users/Brian/Sites/Imprint/node_modules/express/lib/router/index.js:164:37)
+    at param (/Users/Brian/Sites/Imprint/node_modules/express/lib/router/index.js:138:11)
+    at pass (/Users/Brian/Sites/Imprint/node_modules/express/lib/router/index.js:145:5)
+    at Router._dispatch (/Users/Brian/Sites/Imprint/node_modules/express/lib/router/index.js:173:5)
+    at Object.router (/Users/Brian/Sites/Imprint/node_modules/express/lib/router/index.js:33:10)
+    at next (/Users/Brian/Sites/Imprint/node_modules/express/node_modules/connect/lib/proto.js:193:15)
+    at next (/Users/Brian/Sites/Imprint/node_modules/express/node_modules/connect/lib/proto.js:195:9)
+    at Object.module.exports [as handle] (/Users/Brian/Sites/Imprint/routes/globals.js:90:9)
+    at next (/Users/Brian/Sites/Imprint/node_modules/express/node_modules/connect/lib/proto.js:193:15)
+ReferenceError: Invalid left-hand side in assignment
+    at exports.check (/Users/Brian/Sites/Imprint/routes/track/index.js:7:5)
+    at callbacks (/Users/Brian/Sites/Imprint/node_modules/express/lib/router/index.js:164:37)
+    at param (/Users/Brian/Sites/Imprint/node_modules/express/lib/router/index.js:138:11)
+    at pass (/Users/Brian/Sites/Imprint/node_modules/express/lib/router/index.js:145:5)
+    at Router._dispatch (/Users/Brian/Sites/Imprint/node_modules/express/lib/router/index.js:173:5)
+    at Object.router (/Users/Brian/Sites/Imprint/node_modules/express/lib/router/index.js:33:10)
+    at next (/Users/Brian/Sites/Imprint/node_modules/express/node_modules/connect/lib/proto.js:193:15)
+    at next (/Users/Brian/Sites/Imprint/node_modules/express/node_modules/connect/lib/proto.js:195:9)
+    at Object.module.exports [as handle] (/Users/Brian/Sites/Imprint/routes/globals.js:90:9)
+    at next (/Users/Brian/Sites/Imprint/node_modules/express/node_modules/connect/lib/proto.js:193:15)
+ReferenceError: Invalid left-hand side in assignment
+    at exports.check (/Users/Brian/Sites/Imprint/routes/track/index.js:7:5)
+    at callbacks (/Users/Brian/Sites/Imprint/node_modules/express/lib/router/index.js:164:37)
+    at param (/Users/Brian/Sites/Imprint/node_modules/express/lib/router/index.js:138:11)
+    at pass (/Users/Brian/Sites/Imprint/node_modules/express/lib/router/index.js:145:5)
+    at Router._dispatch (/Users/Brian/Sites/Imprint/node_modules/express/lib/router/index.js:173:5)
+    at Object.router (/Users/Brian/Sites/Imprint/node_modules/express/lib/router/index.js:33:10)
+    at next (/Users/Brian/Sites/Imprint/node_modules/express/node_modules/connect/lib/proto.js:193:15)
+    at next (/Users/Brian/Sites/Imprint/node_modules/express/node_modules/connect/lib/proto.js:195:9)
+    at Object.module.exports [as handle] (/Users/Brian/Sites/Imprint/routes/globals.js:90:9)
+    at next (/Users/Brian/Sites/Imprint/node_modules/express/node_modules/connect/lib/proto.js:193:15)
+ReferenceError: Invalid left-hand side in assignment
+    at exports.check (/Users/Brian/Sites/Imprint/routes/track/index.js:7:5)
+    at callbacks (/Users/Brian/Sites/Imprint/node_modules/express/lib/router/index.js:164:37)
+    at param (/Users/Brian/Sites/Imprint/node_modules/express/lib/router/index.js:138:11)
+    at pass (/Users/Brian/Sites/Imprint/node_modules/express/lib/router/index.js:145:5)
+    at Router._dispatch (/Users/Brian/Sites/Imprint/node_modules/express/lib/router/index.js:173:5)
+    at Object.router (/Users/Brian/Sites/Imprint/node_modules/express/lib/router/index.js:33:10)
+    at next (/Users/Brian/Sites/Imprint/node_modules/express/node_modules/connect/lib/proto.js:193:15)
+    at next (/Users/Brian/Sites/Imprint/node_modules/express/node_modules/connect/lib/proto.js:195:9)
+    at Object.module.exports [as handle] (/Users/Brian/Sites/Imprint/routes/globals.js:90:9)
+    at next (/Users/Brian/Sites/Imprint/node_modules/express/node_modules/connect/lib/proto.js:193:15)
+ReferenceError: Invalid left-hand side in assignment
+    at exports.check (/Users/Brian/Sites/Imprint/routes/track/index.js:7:5)
+    at callbacks (/Users/Brian/Sites/Imprint/node_modules/express/lib/router/index.js:164:37)
+    at param (/Users/Brian/Sites/Imprint/node_modules/express/lib/router/index.js:138:11)
+    at pass (/Users/Brian/Sites/Imprint/node_modules/express/lib/router/index.js:145:5)
+    at Router._dispatch (/Users/Brian/Sites/Imprint/node_modules/express/lib/router/index.js:173:5)
+    at Object.router (/Users/Brian/Sites/Imprint/node_modules/express/lib/router/index.js:33:10)
+    at next (/Users/Brian/Sites/Imprint/node_modules/express/node_modules/connect/lib/proto.js:193:15)
+    at next (/Users/Brian/Sites/Imprint/node_modules/express/node_modules/connect/lib/proto.js:195:9)
+    at Object.module.exports [as handle] (/Users/Brian/Sites/Imprint/routes/globals.js:90:9)
+    at next (/Users/Brian/Sites/Imprint/node_modules/express/node_modules/connect/lib/proto.js:193:15)
+ReferenceError: Invalid left-hand side in assignment
+    at exports.check (/Users/Brian/Sites/Imprint/routes/track/index.js:7:5)
+    at callbacks (/Users/Brian/Sites/Imprint/node_modules/express/lib/router/index.js:164:37)
+    at param (/Users/Brian/Sites/Imprint/node_modules/express/lib/router/index.js:138:11)
+    at pass (/Users/Brian/Sites/Imprint/node_modules/express/lib/router/index.js:145:5)
+    at Router._dispatch (/Users/Brian/Sites/Imprint/node_modules/express/lib/router/index.js:173:5)
+    at Object.router (/Users/Brian/Sites/Imprint/node_modules/express/lib/router/index.js:33:10)
+    at next (/Users/Brian/Sites/Imprint/node_modules/express/node_modules/connect/lib/proto.js:193:15)
+    at next (/Users/Brian/Sites/Imprint/node_modules/express/node_modules/connect/lib/proto.js:195:9)
+    at Object.module.exports [as handle] (/Users/Brian/Sites/Imprint/routes/globals.js:90:9)
+    at next (/Users/Brian/Sites/Imprint/node_modules/express/node_modules/connect/lib/proto.js:193:15)
+ReferenceError: Invalid left-hand side in assignment
+    at exports.check (/Users/Brian/Sites/Imprint/routes/track/index.js:7:5)
+    at callbacks (/Users/Brian/Sites/Imprint/node_modules/express/lib/router/index.js:164:37)
+    at param (/Users/Brian/Sites/Imprint/node_modules/express/lib/router/index.js:138:11)
+    at pass (/Users/Brian/Sites/Imprint/node_modules/express/lib/router/index.js:145:5)
+    at Router._dispatch (/Users/Brian/Sites/Imprint/node_modules/express/lib/router/index.js:173:5)
+    at Object.router (/Users/Brian/Sites/Imprint/node_modules/express/lib/router/index.js:33:10)
+    at next (/Users/Brian/Sites/Imprint/node_modules/express/node_modules/connect/lib/proto.js:193:15)
+    at next (/Users/Brian/Sites/Imprint/node_modules/express/node_modules/connect/lib/proto.js:195:9)
+    at Object.module.exports [as handle] (/Users/Brian/Sites/Imprint/routes/globals.js:90:9)
+    at next (/Users/Brian/Sites/Imprint/node_modules/express/node_modules/connect/lib/proto.js:193:15)
+ReferenceError: Invalid left-hand side in assignment
+    at exports.check (/Users/Brian/Sites/Imprint/routes/track/index.js:7:5)
+    at callbacks (/Users/Brian/Sites/Imprint/node_modules/express/lib/router/index.js:164:37)
+    at param (/Users/Brian/Sites/Imprint/node_modules/express/lib/router/index.js:138:11)
+    at pass (/Users/Brian/Sites/Imprint/node_modules/express/lib/router/index.js:145:5)
+    at Router._dispatch (/Users/Brian/Sites/Imprint/node_modules/express/lib/router/index.js:173:5)
+    at Object.router (/Users/Brian/Sites/Imprint/node_modules/express/lib/router/index.js:33:10)
+    at next (/Users/Brian/Sites/Imprint/node_modules/express/node_modules/connect/lib/proto.js:193:15)
+    at next (/Users/Brian/Sites/Imprint/node_modules/express/node_modules/connect/lib/proto.js:195:9)
+    at Object.module.exports [as handle] (/Users/Brian/Sites/Imprint/routes/globals.js:90:9)
+    at next (/Users/Brian/Sites/Imprint/node_modules/express/node_modules/connect/lib/proto.js:193:15)
+connect.multipart() will be removed in connect 3.0
+visit https://github.com/senchalabs/connect/wiki/Connect-3.0 for alternatives
+connect.limit() will be removed in connect 3.0
+ReferenceError: Invalid left-hand side in assignment
+    at exports.check (/Users/Brian/Sites/Imprint/routes/track/index.js:7:5)
+    at callbacks (/Users/Brian/Sites/Imprint/node_modules/express/lib/router/index.js:164:37)
+    at param (/Users/Brian/Sites/Imprint/node_modules/express/lib/router/index.js:138:11)
+    at pass (/Users/Brian/Sites/Imprint/node_modules/express/lib/router/index.js:145:5)
+    at Router._dispatch (/Users/Brian/Sites/Imprint/node_modules/express/lib/router/index.js:173:5)
+    at Object.router (/Users/Brian/Sites/Imprint/node_modules/express/lib/router/index.js:33:10)
+    at next (/Users/Brian/Sites/Imprint/node_modules/express/node_modules/connect/lib/proto.js:193:15)
+    at next (/Users/Brian/Sites/Imprint/node_modules/express/node_modules/connect/lib/proto.js:195:9)
+    at Object.module.exports [as handle] (/Users/Brian/Sites/Imprint/routes/globals.js:90:9)
+    at next (/Users/Brian/Sites/Imprint/node_modules/express/node_modules/connect/lib/proto.js:193:15)
+ReferenceError: Invalid left-hand side in assignment
+    at exports.check (/Users/Brian/Sites/Imprint/routes/track/index.js:7:5)
+    at callbacks (/Users/Brian/Sites/Imprint/node_modules/express/lib/router/index.js:164:37)
+    at param (/Users/Brian/Sites/Imprint/node_modules/express/lib/router/index.js:138:11)
+    at pass (/Users/Brian/Sites/Imprint/node_modules/express/lib/router/index.js:145:5)
+    at Router._dispatch (/Users/Brian/Sites/Imprint/node_modules/express/lib/router/index.js:173:5)
+    at Object.router (/Users/Brian/Sites/Imprint/node_modules/express/lib/router/index.js:33:10)
+    at next (/Users/Brian/Sites/Imprint/node_modules/express/node_modules/connect/lib/proto.js:193:15)
+    at next (/Users/Brian/Sites/Imprint/node_modules/express/node_modules/connect/lib/proto.js:195:9)
+    at Object.module.exports [as handle] (/Users/Brian/Sites/Imprint/routes/globals.js:90:9)
+    at next (/Users/Brian/Sites/Imprint/node_modules/express/node_modules/connect/lib/proto.js:193:15)
+connect.multipart() will be removed in connect 3.0
+visit https://github.com/senchalabs/connect/wiki/Connect-3.0 for alternatives
+connect.limit() will be removed in connect 3.0
+connect.multipart() will be removed in connect 3.0
+visit https://github.com/senchalabs/connect/wiki/Connect-3.0 for alternatives
+connect.limit() will be removed in connect 3.0
