@@ -1,0 +1,66 @@
+{
+    "general": {
+        "production": false,
+        "company": "Imprint",
+        "delimeter": {
+            "web": " · ",
+            "email": " - "
+        },
+        "description": [
+            "Imprint gives humanized insights that help drive the evolution of our product."
+        ],
+        "default": "/"
+    },
+    "development": {
+        "debugger": {
+            "theme": "/lib/debugger/edt.css",
+            "panels": [
+                "locals",
+                "request",
+                "session"
+            ]
+        }
+    },
+    "cookies": {
+        "rememberme": "usrr",
+        "session": {
+            "key": "usrs",
+            "secret": "8ucsTLrvSyaKOCpP4oB6kVlqCOU31qt7ZhoX3EqzDymCTX2SqB"
+        }
+    },
+    "orm": {
+        "reset": false,
+        "preload": false,
+        "sync": true,
+        "debug": false,
+        "protocol": "mysql:",
+        "host": "127.0.0.1",
+        "database": "imprint",
+        "user": "imprint",
+        "password": "imprint"
+    },
+    "stripe": "",
+    "icons": {
+    },
+    "forever": {
+        "uid": "imprint",
+        "silent": false,
+        "watch": true,
+        "watch_directory": "./",
+        "watch_ignore_dot": true,
+        "watch_ignore_patterns": [
+            "config.tmp.json",
+            "node_modules/**",
+            "public/less/**",
+            "public/js/**",
+            "**.out",
+            "**.error",
+            "**.log",
+            ".*/**",
+            ".*"
+        ],
+        "max_failures": 1000,
+        "output_log": "../log.out",
+        "error_log": "../log.error"
+    }
+}
