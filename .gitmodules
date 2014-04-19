@@ -1,0 +1,3 @@
+[submodule "public/less/compless"]
+	path = public/less/compless
+	url = git@github.com:Laborate/compless.git
