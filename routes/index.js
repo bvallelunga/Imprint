@@ -13,6 +13,6 @@ module.exports = function(app) {
             }
         });
 
-        app.all("*", routes.error);
+        app.all("*", routes.error.notfound);
     });
 }

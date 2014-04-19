@@ -1,0 +1,3 @@
+$(function() {
+    $(".error div").vAlign();
+});

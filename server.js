@@ -70,6 +70,9 @@ app.configure(function() {
         app.use(subdomains.middleware);
     });
 
+    //Setup Express Error Handling
+    app.use(require("./routes/error").express);
+
     //Setup Globals
     app.use(require("./routes/globals"));
 });
@@ -91,6 +94,9 @@ app.configure('production', function() {
         return false;
     });
 });
+
+//Setup Global Error Handling
+app.use(require("./routes/error").global);
 
 /* Activate Routes */
 require("./routes")(app);

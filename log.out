@@ -149,3 +149,105 @@ Start assets generation for 'css'
 [90mGET /favicon/32.png/?rand=34647 [32m200 [90m3ms[0m
 [90mGET /favicon/32.png/?rand=34647 [32m200 [90m2ms[0m
 [90mGET /favicon/32.png/?rand=34647 [32m200 [90m2ms[0m
+[90mGET / [32m200 [90m10ms[0m
+[90mGET /track.js/ [36m304 [90m2ms[0m
+[90mGET /track/v1/check/?user=wfSHq3R1lwlBpOVd&url=http://localhost/ [36m304 [90m1ms[0m
+[90mGET /track/v1/ [32m200 [90m9ms[0m
+[90mGET /favicon/32.png/?rand=382239 [32m200 [90m5ms[0m
+[90mGET /favicon/32.png/?rand=382239 [32m200 [90m3ms[0m
+[90mGET /favicon/32.png/?rand=382239 [32m200 [90m2ms[0m
+Start assets generation for 'js'
+Start assets generation for 'css'
+Start assets generation for 'js'
+Start assets generation for 'css'
+Start assets generation for 'js'
+Start assets generation for 'css'
+Start assets generation for 'js'
+Start assets generation for 'css'
+Start assets generation for 'js'
+Start assets generation for 'css'
+Start assets generation for 'js'
+Start assets generation for 'css'
+Start assets generation for 'js'
+Start assets generation for 'css'
+Start assets generation for 'js'
+Start assets generation for 'css'
+Start assets generation for 'js'
+Start assets generation for 'css'
+Start assets generation for 'js'
+Start assets generation for 'css'
+Start assets generation for 'js'
+Start assets generation for 'css'
+Start assets generation for 'js'
+Start assets generation for 'css'
+Start assets generation for 'js'
+Start assets generation for 'css'
+Start assets generation for 'js'
+Start assets generation for 'css'
+[90mGET / [31m500 [90m6ms - 963b[0m
+[90mGET /favicon.ico/ [31m500 [90m3ms - 963b[0m
+[90mGET /favicon.ico/ [31m500 [90m2ms - 963b[0m
+Start assets generation for 'js'
+Start assets generation for 'css'
+Start assets generation for 'js'
+Start assets generation for 'css'
+[90mGET / [31m500 [90m7ms - 971b[0m
+[90mGET /favicon.ico/ [31m500 [90m3ms - 971b[0m
+[90mGET /favicon.ico/ [31m500 [90m3ms - 971b[0m
+Start assets generation for 'js'
+Start assets generation for 'css'
+[90mGET / [33m404 [90m8ms - 1000b[0m
+[90mGET /favicon.ico/ [33m404 [90m3ms - 15b[0m
+[90mGET /favicon.ico/ [33m404 [90m1ms - 15b[0m
+Start assets generation for 'js'
+Start assets generation for 'css'
+{ [Error: ENOENT, no such file or directory '/Users/Brian/Sites/Imprint/views/error/includes/start.html']
+  errno: 34,
+  code: 'ENOENT',
+  path: '/Users/Brian/Sites/Imprint/views/error/includes/start.html',
+  syscall: 'open' }
+[90mGET / [33m404 [90m8ms - 997b[0m
+{ [Error: ENOENT, no such file or directory '/Users/Brian/Sites/Imprint/views/error/includes/start.html']
+  errno: 34,
+  code: 'ENOENT',
+  path: '/Users/Brian/Sites/Imprint/views/error/includes/start.html',
+  syscall: 'open' }
+[90mGET / [33m404 [90m4ms - 997b[0m
+Start assets generation for 'js'
+Start assets generation for 'css'
+[90mGET / [33m404 [90m25ms[0m
+[90mGET /track.js/ [36m304 [90m2ms[0m
+[90mGET /track/v1/check/?user=wfSHq3R1lwlBpOVd&url=http://localhost/ [36m304 [90m2ms[0m
+[90mGET /track/v1/ [32m200 [90m32ms[0m
+[90mGET /favicon/32.png/?rand=632897 [33m404 [90m34ms - 15b[0m
+[90mGET / [33m404 [90m12ms[0m
+[90mGET /track.js/ [36m304 [90m1ms[0m
+[90mGET /track/v1/check/?user=wfSHq3R1lwlBpOVd&url=http://localhost/ [36m304 [90m1ms[0m
+[90mGET /track/v1/ [32m200 [90m8ms[0m
+[90mGET /favicon/32.png/?rand=730670 [33m404 [90m2ms - 15b[0m
+Start assets generation for 'js'
+Start assets generation for 'css'
+[90mGET / [33m404 [90m21ms[0m
+[90mGET /track.js/ [36m304 [90m3ms[0m
+[90mGET /track/v1/check/?user=wfSHq3R1lwlBpOVd&url=http://localhost/ [36m304 [90m3ms[0m
+[90mGET /track/v1/ [32m200 [90m16ms[0m
+[90mGET /favicon/32.png/?rand=678745 [33m404 [90m6ms - 4b[0m
+Start assets generation for 'js'
+Start assets generation for 'css'
+Start assets generation for 'js'
+Start assets generation for 'css'
+Start assets generation for 'js'
+Start assets generation for 'css'
+Start assets generation for 'js'
+Start assets generation for 'css'
+Start assets generation for 'js'
+Start assets generation for 'css'
+Start assets generation for 'js'
+Start assets generation for 'css'
+Start assets generation for 'js'
+Start assets generation for 'css'
+[90mGET / [33m404 [90m20ms[0m
+[90mGET /track.js/ [36m304 [90m2ms[0m
+[90mGET /track/v1/check/?user=wfSHq3R1lwlBpOVd&url=http://localhost/ [36m304 [90m2ms[0m
+[90mGET /track/v1/ [32m200 [90m17ms[0m
+[90mGET /favicon/32.png/?rand=789524 [33m404 [90m8ms - 4b[0m
