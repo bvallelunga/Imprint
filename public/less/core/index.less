@@ -1,0 +1,66 @@
+@import '../compless/all';
+@import './colors';
+
+html {
+    height: 100%;
+
+    body {
+        margin: 0;
+        padding: 0;
+        background: @body;
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        min-width: 1077px;
+        min-height: 100%;
+        position: relative;
+        .reset-box-model();
+        .reset-font();
+
+        * {
+            outline: none;
+            -webkit-font-smoothing: subpixel-antialiased;
+
+            &:disabled {
+                opacity: .8;
+            }
+        }
+
+        ul {
+            .reset-list-style();
+        }
+
+        a {
+            color: inherit;
+        	text-decoration: none;
+        }
+
+        table {
+            .reset-table();
+
+            tr td {
+                .reset-table-cell();
+            }
+        }
+
+        input,
+        button,
+        select,
+        textarea {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            border: none;
+            margin: 2px 0px;
+            .border-radius(0);
+            .box-shadow(none);
+            .box-sizing(border-box);
+        }
+
+        input:not([type="radio"]):not([type="checkbox"]),
+        select, textarea {
+            .appearance(none);
+        }
+
+        iframe {
+            outline: none;
+            border: none;
+        }
+    }
+}

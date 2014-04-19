@@ -85,4 +85,4 @@ require("./routes")(app);
 
 /* Start Router */
 app.use(app.router);
-srv.listen(80);
+srv.listen(config.general.port);

@@ -1,6 +1,7 @@
 {
     "general": {
         "production": false,
+        "port": 3000,
         "company": "Imprint",
         "delimeter": {
             "web": " · ",
