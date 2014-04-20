@@ -23,26 +23,14 @@ exports.init = function(app, srv) {
         if(fs.statSync(path).isDirectory()) {
             $.each(fs.readdirSync(path), function(index, file) {
                 if(file && file != ".DS_Store") {
-                    if(directory === "core") {
-                        if(file === "external.txt") {
-                            var links = fs.readFileSync(path + "/" + file, "utf-8").split("\n");
+                    if(file === "external.txt") {
+                        var links = fs.readFileSync(path + "/" + file, "utf-8").split("\n");
 
-                            $.each(links, function(index, link) {
-                                js.addUrl(link);
-                            });
-                        } else {
-                            js.addFile(path + "/" + file);
-                        }
+                        $.each(links, function(index, link) {
+                            js.addUrl(directory, link);
+                        });
                     } else {
-                        if(file === "external.txt") {
-                            var links = fs.readFileSync(path + "/" + file, "utf-8").split("\n");
-
-                            $.each(links, function(index, link) {
-                                js.addUrl(directory, link);
-                            });
-                        } else {
-                            js.addFile(directory, path + "/" + file);
-                        }
+                        js.addFile(directory, path + "/" + file);
                     }
                 }
             });
@@ -56,11 +44,7 @@ exports.init = function(app, srv) {
         if(fs.statSync(path).isDirectory() && directory !== "compless") {
             $.each(fs.readdirSync(path), function(index, file) {
                 if(file && file != ".DS_Store") {
-                    if(directory === "core") {
-                        css.addFile(path + "/" + file);
-                    } else {
-                        css.addFile(directory, path + "/" + file);
-                    }
+                    css.addFile(directory, path + "/" + file);
                 }
             });
         }

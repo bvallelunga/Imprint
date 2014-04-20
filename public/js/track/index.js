@@ -48,6 +48,20 @@
         xhr.send();
     }
 
+    this.insertAssests = function(assests) {
+        document.head.innerHTML += assests.css;
+
+        assests.js.forEach(function(src) {
+          var script = document.createElement('script');
+          script.src = src;
+          document.head.appendChild(script);
+        });
+    }
+
+    this.insertContent = function(content) {
+        document.body.innerHTML += content;
+    }
+
     this.handleResponse = function(data) {
         var _this = this;
 
@@ -55,7 +69,12 @@
             data = JSON.parse(data);
 
             if(data.success && data.show) {
-                console.log(data);
+                this.insertAssests(data.assests);
+                this.insertContent(data.content);
+
+                setTimeout(function() {
+                    window.Imprint.open();
+                }, data.delay);
             }
         }
     }

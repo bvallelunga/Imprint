@@ -1,2 +1,46 @@
 @import '../compless/all';
 @import '../core/colors';
+
+@zindex: 999999999;
+
+.imprint_backdrop {
+    position: fixed;
+    z-index: @zindex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    display: none;
+    .transition(all);
+
+    &.activated {
+        background: rgba(0, 0, 0, 0.5);
+    }
+}
+
+.imprint_popup {
+    position: absolute;
+    top: -500px;
+    left: 50%;
+    z-index: @zindex + 1;
+    width: 300px;
+    margin-left: -150px;
+    background: #fff;
+    border: solid 1px #000;
+    overflow: hidden;
+    .border-radius(3px);
+    .box-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+    .transition(all);
+
+    &.activated {
+        top: 50%;
+    }
+
+    .imprint_header {
+        padding: 10px;
+        font-size: 14px;
+        color: #666;
+        border-bottom: solid 1px #666;
+    }
+}

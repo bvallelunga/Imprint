@@ -56,8 +56,8 @@ var error_handler = function(status, message, req, res) {
                         host: req.host,
                         title: error_message,
                         mode: error_message,
-                        js: req.js.renderTags("error"),
-                        css: req.css.renderTags("error"),
+                        js: req.js.renderTags("core", "error"),
+                        css: req.css.renderTags("core", "error"),
                         error: error_html
                     });
                 }
