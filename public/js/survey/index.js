@@ -1,9 +1,11 @@
 window.Imprint = {
     $$: document.querySelectorAll.bind(document),
     forEach: Array.prototype.forEach,
+    finished: false,
     activate: function(type) {
         this.backdrop = this.$$("#imprint_backdrop")[0];
         this.survey = this.$$("#imprint_survey")[0];
+        this.type = type;
 
         if(type in this) {
             this[type].activate(this);
@@ -69,13 +71,17 @@ window.Imprint = {
             "Loving it"
         ],
         mouseover: function(_this, index) {
-            _this.$$(".imprint_description")[0].innerText = _this.stars.descriptions[index - 1];
+            if(!_this.finished) {
+                _this.$$(".imprint_description")[0].innerText = _this.stars.descriptions[index - 1];
+            }
         },
         mouseout: function(_this, index) {
-            if(_this.stars.rating) {
-                _this.$$(".imprint_description")[0].innerText = _this.stars.descriptions[_this.stars.rating - 1];
-            } else {
-                _this.$$(".imprint_description")[0].innerText = "....";
+            if(!_this.finished) {
+                if(_this.stars.rating) {
+                    _this.$$(".imprint_description")[0].innerText = _this.stars.descriptions[_this.stars.rating - 1];
+                } else {
+                    _this.$$(".imprint_description")[0].innerText = "....";
+                }
             }
         },
         choose: function(_this, star, index) {
@@ -85,6 +91,15 @@ window.Imprint = {
             });
 
             star.className = "chosen";
+
+            if(index == 5) {
+                _this.finished = true;
+                _this.$$(".imprint_description")[0].innerText = "Thank You!";
+
+                setTimeout(function() {
+                    _this[_this.type].close(_this);
+                }, 3000);
+            }
         }
     }
 }
