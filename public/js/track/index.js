@@ -1,18 +1,35 @@
 (function(window, document) {
     /* Defaults */
+    this.csrf = "";
     this.url = "http://localhost/track/v1/";
     this.script = document.getElementById("imprint-js");
-    this.params = [
-        "user=" + script.getAttribute("data-key"),
-        "show=" + script.getAttribute("data-show"),
-        "host=" + encodeURIComponent(window.location.hostname),
-        "path=" + encodeURIComponent(window.location.pathname),
-        "port=" + encodeURIComponent(window.location.port)
-    ].join("&");
+    this.params = {
+        user: script.getAttribute("data-key"),
+        show: script.getAttribute("data-show"),
+        host: window.location.hostname,
+        path: window.location.pathname,
+        port: window.location.port
+    };
 
     /* Library */
-    this.request = function(url, params, callback) {
-        var  xhr;
+    this.request = function(params, action, callback) {
+        var xhr,
+            full_url = this.url,
+            full_params = "";
+
+        for (var key in params) {
+            if(full_params != "") {
+                full_params += "&";
+            }
+
+            full_params += key + "=" + params[key];
+        }
+
+        if(action == "GET") {
+            full_url += "?" + full_params;
+        } else if(action == "POST") {
+            params.csrf = this.csrf;
+        }
 
         if(typeof XMLHttpRequest !== 'undefined') {
             xhr = new XMLHttpRequest();
@@ -35,18 +52,20 @@
             }
         }
 
-        xhr.onreadystatechange = function() {
-            if(xhr.readyState < 4 || xhr.status !== 200) {
-                return callback(false);
-            } else if(xhr.readyState === 4) {
-                return callback(xhr.responseText);
-            } else {
-                return callback(false);
+        if(typeof callback == "function") {
+            xhr.onreadystatechange = function() {
+                if(xhr.readyState < 4 || xhr.status !== 200) {
+                    return callback(false);
+                } else if(xhr.readyState === 4) {
+                    return callback(xhr.responseText);
+                } else {
+                    return callback(false);
+                }
             }
         }
 
-        xhr.open('GET', url + "?" + params, true);
-        xhr.send();
+        xhr.open(action, full_url, true);
+        xhr.send(full_params);
     }
 
     this.insertAssests = function(assests) {
@@ -74,6 +93,7 @@
 
         if(data != false) {
             data = JSON.parse(data);
+            _this.csrf = data.csrf;
 
             if(data.success && data.show) {
                 this.insertAssests(data.assests);
@@ -83,7 +103,7 @@
                     if(window.Imprint) {
                         clearInterval(interval);
                         setTimeout(function() {
-                            window.Imprint.activate(data.type);
+                            window.Imprint.activate(_this, data.type);
                         }, data.delay);
                     }
                 }, 10);
@@ -92,5 +112,5 @@
     }
 
     /* Initalize */
-    this.request(this.url, this.params, this.handleResponse);
+    this.request(this.params, "GET", this.handleResponse);
 })(window, document);

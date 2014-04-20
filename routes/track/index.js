@@ -8,6 +8,7 @@ exports.survey = function(req, res, next) {
         header: "Hows your experience been?",
     }, function(error, content) {
         res.success({
+            csrf: (req.csrfToken) ? req.csrfToken() : "",
             show: (req.param("path") == "/"),
             delay: 1000,
             type: "popup",

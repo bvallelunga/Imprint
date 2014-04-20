@@ -2,10 +2,11 @@ window.Imprint = {
     $$: document.querySelectorAll.bind(document),
     forEach: Array.prototype.forEach,
     finished: false,
-    activate: function(type) {
+    activate: function(parent, type) {
         this.backdrop = this.$$("#imprint_backdrop")[0];
         this.survey = this.$$("#imprint_survey")[0];
         this.type = type;
+        this.parent = parent;
 
         if(type in this) {
             this[type].activate(this);
@@ -95,6 +96,9 @@ window.Imprint = {
             if(index == 5) {
                 _this.finished = true;
                 _this.$$(".imprint_description")[0].innerText = "Thank You!";
+                _this.parent.request({
+                    rating: index
+                }, "POST");
 
                 setTimeout(function() {
                     _this[_this.type].close(_this);
