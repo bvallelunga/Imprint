@@ -24,7 +24,7 @@ window.Imprint = {
 
                 setTimeout(function() {
                     _this.survey.className = "imprint_popup activated";
-                    _this.survey.style.marginTop = (_this.survey.offsetHeight / 2);
+                    _this.survey.style.marginTop = (_this.survey.offsetHeight / 2) + "px";
                 }, 300);
             }, 100);
         },

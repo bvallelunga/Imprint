@@ -1,5 +1,5 @@
 (function(window, document) {
-    /* Library */
+    /* Defaults */
     this.url = "http://localhost/track/v1/";
     this.script = document.getElementById("imprint-js");
     this.params = [
@@ -10,6 +10,7 @@
         "port=" + encodeURIComponent(window.location.port)
     ].join("&");
 
+    /* Library */
     this.request = function(url, params, callback) {
         var  xhr;
 

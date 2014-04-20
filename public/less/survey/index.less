@@ -20,13 +20,12 @@
 }
 
 .imprint_popup {
-    position: absolute;
+    position: fixed;
     top: -500px;
     left: 50%;
     z-index: @zindex + 1;
     width: 300px;
     margin-left: -150px;
-    background: #fff;
     overflow: hidden;
     .border-radius(3px);
     .box-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
@@ -54,7 +53,7 @@
             font-size: 10px;
             padding-top: 4px;
             text-align: center;
-            background: lighten(#1EA1D8, 25%);
+            background: darken(#1EA1D8, 20%);
             width: 20px;
             height: 20px;
             .float-right();
@@ -63,16 +62,57 @@
             .box-shadow(inset 0 0 15px rgba(0, 0, 0, 0.1));
 
             &:hover {
-                background: lighten(#1EA1D8, 20%);
+                background: darken(#1EA1D8, 25%);
 
                 &:active {
-                    background: lighten(#1EA1D8, 15%);
+                    background: darken(#1EA1D8, 30%);
                 }
             }
         }
     }
 
-    .imprint_stars {
-        padding: 10px;
+    .imprint_rating {
+        background: #fff;
+        padding: 8px 12px;
+        .clearfix();
+
+        .imprint_stars {
+            unicode-bidi: bidi-override;
+            direction: rtl;
+            text-align: left;
+            font-size: 20px;
+            .float-left();
+
+            & > span {
+                display: inline-block;
+                position: relative;
+                width: 4px;
+                padding: 0 10px;
+                cursor: pointer;
+
+                &:last-child {
+                    margin-left: 6px;
+                }
+
+                &:before,
+                & ~ span:before {
+                    color: #D4D4D4;
+                    content: "\2605";
+                    position: absolute;
+                }
+
+                &:hover:before,
+                &:hover ~ span:before {
+                    color: #FDE47E;
+                }
+            }
+        }
+
+        .imprint_description {
+            margin: 2px 0 0 10px;
+            color: darken(#D4D4D4, 30%);
+            font-size: 20px;
+            .float-left();
+        }
     }
 }

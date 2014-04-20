@@ -5,11 +5,11 @@ exports.index = function(req, res, next) {
 
 exports.survey = function(req, res, next) {
     req.app.render("surveys/popup", {
-        header: "How Can We Help You",
+        header: "Hows your experience been?",
     }, function(error, content) {
         res.success({
             show: (req.param("path") == "/"),
-            delay: 0,
+            delay: 1000,
             type: "popup",
             content: content,
             assests: {
