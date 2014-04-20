@@ -1,7 +1,7 @@
 (function() {
     /* Library */
-    this.host = "//localhost/track/v1/"; //Development
-    //this.host = "//track.imprint.com/v1/"; //Production
+    this.host = "http://localhost/track/v1/"; //Development
+    //this.host = "http://track.imprint.com/v1/"; //Production
 
     this.script = document.getElementById("imprint-js");
     this.params = [
@@ -80,12 +80,12 @@
         this.iframe.style.webkitTapHighlightColor = "transparent";
         this.iframe.onload = callback;
 
-        document.body.appendChild(this.iframe);
+        window.document.body.appendChild(this.iframe);
     }
 
     this.open = function() {
         this.iframe.style.display = "block";
-        this.iframe.contentWindow.survey();
+        this.iframe.contentWindow.postMessage("open", this.url());
     }
 
     this.close = function() {
@@ -106,6 +106,13 @@
         }
     }
 
+    this.message = function(e) {
+        this[e.data]();
+    }
+
     /* Initalize */
     this.request(this.url("check"), this.params, this.handleResponse);
+
+    /* Add Event Listeners */
+    window.addEventListener('message', this.message, false);
 })();
