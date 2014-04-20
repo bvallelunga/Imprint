@@ -24,8 +24,8 @@
     top: -500px;
     left: 50%;
     z-index: @zindex + 1;
-    width: 300px;
-    margin-left: -150px;
+    width: 270px;
+    margin-left: -135px;
     overflow: hidden;
     .border-radius(3px);
     .box-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
@@ -102,7 +102,9 @@
                 }
 
                 &:hover:before,
-                &:hover ~ span:before {
+                &:hover ~ span:before,
+                &.chosen:before,
+                &.chosen ~ span:before, {
                     color: #FDE47E;
                 }
             }
