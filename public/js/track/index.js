@@ -49,12 +49,18 @@
     }
 
     this.insertAssests = function(assests) {
-        document.head.innerHTML += assests.css;
+        assests.css.forEach(function(href) {
+            var link = document.createElement('link');
+            link.href = href;
+            link.rel = "stylesheet";
+            document.head.appendChild(link);
+        });
 
         assests.js.forEach(function(src) {
-          var script = document.createElement('script');
-          script.src = src;
-          document.head.appendChild(script);
+            var script = document.createElement('script');
+            script.src = src;
+            script.type = "text/javascript";
+            document.head.appendChild(script);
         });
     }
 

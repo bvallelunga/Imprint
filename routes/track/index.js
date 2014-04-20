@@ -11,15 +11,19 @@ exports.survey = function(req, res, next) {
             show: (req.param("path") == "/"),
             delay: 0,
             type: "popup",
+            content: content,
             assests: {
-                css: req.css.renderTags("survey"),
+                css: $.map(req.css.renderTags("survey").split("\n"), function(script) {
+                    if(script) {
+                        return req.session.server + $(script).attr("href");
+                    }
+                }),
                 js: $.map(req.js.renderTags("survey").split("\n"), function(script) {
                     if(script) {
-                        return $(script).attr("src");
+                        return req.session.server + $(script).attr("src");
                     }
                 })
-            },
-            content: content
+            }
         });
     });
 }
