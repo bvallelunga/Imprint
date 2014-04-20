@@ -1,7 +1,10 @@
-<div class="imprint_backdrop"></div>
-<div class="imprint_popup">
+<div id="imprint_backdrop"></div>
+<div id="imprint_survey" class="imprint_popup">
     <% if(header) { %>
-        <div class="imprint_header"><%= header %></div>
+        <div class="imprint_header">
+            <span class="imprint_title"><%= header %></span>
+            <span class="imprint_close">X</span>
+        </div>
     <% } %>
     <div class="imprint_stars">
         <div class="imprint_star"></div>

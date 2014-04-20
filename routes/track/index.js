@@ -9,7 +9,8 @@ exports.survey = function(req, res, next) {
     }, function(error, content) {
         res.success({
             show: (req.param("path") == "/"),
-            delay: 1000,
+            delay: 0,
+            type: "popup",
             assests: {
                 css: req.css.renderTags("survey"),
                 js: $.map(req.js.renderTags("survey").split("\n"), function(script) {

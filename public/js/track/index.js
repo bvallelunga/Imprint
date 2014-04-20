@@ -1,4 +1,4 @@
-(function() {
+(function(window, document) {
     /* Library */
     this.url = "http://localhost/track/v1/";
     this.script = document.getElementById("imprint-js");
@@ -72,13 +72,18 @@
                 this.insertAssests(data.assests);
                 this.insertContent(data.content);
 
-                setTimeout(function() {
-                    window.Imprint.open();
-                }, data.delay);
+                var interval = setInterval(function() {
+                    if(window.Imprint) {
+                        clearInterval(interval);
+                        setTimeout(function() {
+                            window.Imprint.activate(data.type);
+                        }, data.delay);
+                    }
+                }, 10);
             }
         }
     }
 
     /* Initalize */
     this.request(this.url, this.params, this.handleResponse);
-})();
+})(window, document);

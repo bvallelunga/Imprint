@@ -3,7 +3,7 @@
 
 @zindex: 999999999;
 
-.imprint_backdrop {
+#imprint_backdrop {
     position: fixed;
     z-index: @zindex;
     top: 0;
@@ -40,7 +40,40 @@
     .imprint_header {
         padding: 10px;
         font-size: 14px;
-        color: #666;
-        border-bottom: solid 1px #666;
+        color: #fff;
+        background: #1EA1D8;
+        border-bottom: solid 1px darken(#1EA1D8, 15%);
+        .clearfix();
+
+        .imprint_title {
+            margin-top: 2px;
+            .float-left();
+        }
+
+        .imprint_close {
+            cursor: pointer;
+            font-size: 10px;
+            padding-top: 4px;
+            text-align: center;
+            background: lighten(#1EA1D8, 25%);
+            width: 20px;
+            height: 20px;
+            .float-right();
+            .border-radius(50%);
+            .box-sizing(border-box);
+            .box-shadow(inset 0 0 15px rgba(0, 0, 0, 0.1));
+
+            &:hover {
+                background: lighten(#1EA1D8, 20%);
+
+                &:active {
+                    background: lighten(#1EA1D8, 15%);
+                }
+            }
+        }
+    }
+
+    .imprint_stars {
+        padding: 10px;
     }
 }
