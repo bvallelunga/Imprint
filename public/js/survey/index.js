@@ -9,10 +9,12 @@ window.Imprint = {
     },
     popup: {
         activate: function(_this) {
-            var header = _this.survey.getElementsByClassName("imprint_header")[0];
-            header.addEventListener('click', function() {
-                 _this.popup.close(_this);
-            }, false);
+            var header = _this.survey.getElementsByClassName("imprint_close")[0];
+            [_this.backdrop, header].forEach(function(element) {
+                element.addEventListener('click', function() {
+                     _this.popup.close(_this);
+                }, false);
+            });
         },
         open: function(_this) {
             _this.backdrop.style.display = "block";
