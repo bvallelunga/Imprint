@@ -18,24 +18,24 @@ window.Imprint = {
             var close = _this.$$(".imprint_close")[0];
 
             _this.forEach.call([_this.backdrop, close], function(element) {
-                element.addEventListener('click', function() {
+                element.onclick = function() {
                      _this.popup.close(_this);
-                }, false);
+                };
             });
 
             _this.forEach.call(_this.$$(".imprint_stars span"), function(element, index) {
-                element.addEventListener('click', function() {
+                element.onclick = function() {
                      _this.stars.choose(_this, element, (5 - index));
-                }, false);
+                };
 
-                element.addEventListener('mouseover', function() {
+                element.onmouseover = function() {
                     _this.stars.mouseover(_this, (5 - index));
-                }, false);
-
-                element.addEventListener('mouseout', function() {
-                    _this.stars.mouseout(_this);
-                }, false);
+                };
             });
+
+            _this.$$(".imprint_stars")[0].onmouseout = function() {
+                _this.stars.mouseout(_this);
+            };
         },
         open: function(_this) {
             _this.backdrop.style.display = "block";
