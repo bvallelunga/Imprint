@@ -79,15 +79,15 @@ window.Imprint = {
         ],
         mouseover: function(_this, index) {
             if(!_this.finished) {
-                _this.$$(".imprint_description")[0].innerText = _this.stars.descriptions[index - 1];
+                _this.$$(".imprint_description")[0].innerHTML = _this.stars.descriptions[index - 1];
             }
         },
         mouseout: function(_this) {
             if(!_this.finished) {
                 if(_this.stars.rating) {
-                    _this.$$(".imprint_description")[0].innerText = _this.stars.descriptions[_this.stars.rating - 1];
+                    _this.$$(".imprint_description")[0].innerHTML = _this.stars.descriptions[_this.stars.rating - 1];
                 } else {
-                    _this.$$(".imprint_description")[0].innerText = "..........";
+                    _this.$$(".imprint_description")[0].innerHTML = "..........";
                 }
             }
         },
@@ -124,7 +124,7 @@ window.Imprint = {
     },
     submit: function(_this) {
         _this.finished = true;
-        _this.$$(".imprint_description")[0].innerText = "Thank You!";
+        _this.$$(".imprint_description")[0].innerHTML = "Thank You!";
         _this.$$(".imprint_button")[0].value = "sending...";
         _this.$$(".imprint_button")[0].className += " sending";
 

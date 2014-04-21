@@ -3,6 +3,17 @@
 
 @zindex: 999999999;
 
+@-moz-document url-prefix() {
+    .imprint_popup .imprint_stars > span {
+        font-size: 35px;
+        line-height: 25px;
+
+        &:last-child {
+            margin-left: 10px !important;
+        }
+    }
+}
+
 #imprint_backdrop {
     position: fixed;
     z-index: @zindex;
@@ -189,6 +200,7 @@
 
             &.sending {
                 opacity: 0.8;
+                background: darken(#36B1F3, 13%);
             }
         }
     }
