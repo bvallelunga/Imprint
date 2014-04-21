@@ -102,6 +102,7 @@ window.Imprint = {
             if(_this.response.questions[String(index)]) {
                 _this.questionaire.open(_this, index);
             } else {
+                _this.questionaire.close(_this, index);
                 _this.submit(_this);
             }
         }
@@ -119,6 +120,14 @@ window.Imprint = {
                 setTimeout(function() {
                     _this.survey.style.marginTop = (-1 * _this.survey.offsetHeight / 2) + "px";
                 }, 10);
+            }, 10);
+        },
+        close: function(_this) {
+            _this.$$(".imprint_questionaire")[0].className = "imprint_questionaire";
+            _this.$$(".imprint_submit")[0].className = "imprint_submit";
+
+            setTimeout(function() {
+                _this.survey.style.marginTop = (-1 * _this.survey.offsetHeight / 2) + "px";
             }, 10);
         }
     },
