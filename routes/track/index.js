@@ -6,6 +6,8 @@ exports.index = function(req, res, next) {
 exports.survey = function(req, res, next) {
     req.app.render("surveys/popup", {
         header: "Hows your experience been?",
+        placeholder: "your response...",
+        button: "Send Feedback"
     }, function(error, content) {
         res.success({
             csrf: (req.csrfToken) ? req.csrfToken() : "",
@@ -24,6 +26,13 @@ exports.survey = function(req, res, next) {
                         return req.session.server + $(script).attr("src");
                     }
                 })
+            },
+            questions: {
+                "1": "What do you hate about the site?",
+                "2": "What could we improve on?",
+                "3": "Do you feel any features are missing?",
+                "4": "Have any suggestions on the site?",
+                "5": false
             }
         });
     });

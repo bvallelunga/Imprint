@@ -95,12 +95,14 @@ app.configure('production', function() {
     });
 });
 
-//Setup Global Error Handling
-app.use(require("./routes/error").global);
-
 /* Activate Routes */
 require("./routes")(app);
 
 /* Start Router */
 app.use(app.router);
+
+//Setup Global Error Handling
+app.use(require("./routes/error").global);
+
+/* Lister To Port */
 srv.listen(config.general.port);

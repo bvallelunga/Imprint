@@ -24,10 +24,11 @@
     top: -500px;
     left: 50%;
     z-index: @zindex + 1;
-    width: 310px;
-    margin-left: -155px;
+    width: 320px;
+    margin-left: -160px;
     overflow: hidden;
     border: none;
+    background: transparent;
     .border-radius(3px);
     .box-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
     .transition(all);
@@ -121,6 +122,74 @@
             color: darken(#D4D4D4, 30%);
             font-size: 20px;
             .float-left();
+        }
+    }
+
+    .imprint_questionaire {
+        background: darken(#fff, 2%);
+        border-top: solid 1px darken(#fff, 5%);
+        padding: 10px 12px;
+        text-align: left;
+        display: none;
+
+        &.activated {
+            display: block;
+        }
+
+        .imprint_question {
+            font-size: 14px;
+            color: darken(#fff, 55%);
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .imprint_response {
+            font-size: 13px;
+            color: darken(#fff, 70%);
+            border: solid 1px darken(#fff, 10%);
+            padding: 8px;
+            width: 100%;
+            height: 65px;
+            resize: none;
+            .box-sizing(border-box);
+            .border-radius(2px);
+            .box-shadow(inset 0 1px 3px darken(#fff, 5%));
+        }
+    }
+
+    .imprint_submit {
+        background: darken(#fff, 3%);
+        border-top: solid 1px darken(#fff, 6%);
+        padding: 10px 12px;
+        display: none;
+
+        &.activated {
+            display: block;
+        }
+
+        .imprint_button {
+            width: 100%;
+            text-align: center;
+            padding: 8px 0;
+            font-size: 14px;
+            color: #fff;
+            cursor: pointer;
+            text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+            border: solid 1px darken(#36B1F3, 15%);
+            .border-radius(2px);
+            .linear-gradient(0deg, darken(#36B1F3, 10%), #36B1F3);
+
+            &:hover {
+                .linear-gradient(0deg, darken(#36B1F3, 13%), #36B1F3);
+
+                &:active {
+                    .linear-gradient(0deg, darken(#36B1F3, 13%), darken(#36B1F3, 14%));
+                }
+            }
+
+            &.sending {
+                opacity: 0.8;
+            }
         }
     }
 }

@@ -31,6 +31,8 @@
             params.csrf = this.csrf;
         }
 
+        params = encodeURI(params);
+
         if(typeof XMLHttpRequest !== 'undefined') {
             xhr = new XMLHttpRequest();
         } else {
@@ -103,7 +105,7 @@
                     if(window.Imprint) {
                         clearInterval(interval);
                         setTimeout(function() {
-                            window.Imprint.activate(_this, data.type);
+                            window.Imprint.activate(_this, data);
                         }, data.delay);
                     }
                 }, 10);
