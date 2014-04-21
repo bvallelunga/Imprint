@@ -143,7 +143,7 @@ window.Imprint = {
         }, "POST", function() {
             setTimeout(function() {
                 _this[_this.response.type].close(_this);
-            }, 2000);
+            }, 1000);
         });
     }
 }

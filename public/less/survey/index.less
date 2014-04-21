@@ -43,16 +43,22 @@
     left: 50%;
     z-index: @zindex + 1;
     width: 320px;
-    margin-left: -160px;
+    opacity: 0;
     overflow: hidden;
-    border: none;
+    margin-left: -160px;
     background: transparent;
     .border-radius(3px);
     .box-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
     .transition(all);
 
     &.activated {
+        opacity: 1;
         top: 50%;
+    }
+
+    & > * {
+        padding: 0;
+        margin: 0;
     }
 
     .imprint_header {
@@ -73,19 +79,18 @@
             font-size: 10px;
             padding-top: 4px;
             text-align: center;
-            background: darken(#1EA1D8, 20%);
+            background: darken(#1EA1D8, 10%);
             width: 20px;
             height: 20px;
             .float-right();
             .border-radius(50%);
             .box-sizing(border-box);
-            .box-shadow(inset 0 0 15px rgba(0, 0, 0, 0.1));
 
             &:hover {
-                background: darken(#1EA1D8, 25%);
+                background: darken(#1EA1D8, 15%);
 
                 &:active {
-                    background: darken(#1EA1D8, 30%);
+                    background: darken(#1EA1D8, 20%);
                 }
             }
         }
