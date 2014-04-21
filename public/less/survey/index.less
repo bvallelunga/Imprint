@@ -37,23 +37,26 @@
     }
 }
 
-.imprint_popup {
+#imprint_survey {
     position: fixed;
-    top: -500px;
-    left: 50%;
     z-index: @zindex + 1;
-    width: 320px;
-    opacity: 0;
     overflow: hidden;
-    margin-left: -160px;
     background: transparent;
     .border-radius(3px);
     .box-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
     .transition(all);
 
-    &.activated {
-        opacity: 1;
-        top: 50%;
+    &.imprint_popup {
+        width: 320px;
+        opacity: 0;
+        margin-left: -160px;
+        top: -500px;
+        left: 50%;
+
+        &.activated {
+            opacity: 1;
+            top: 50%;
+        }
     }
 
     & > * {
