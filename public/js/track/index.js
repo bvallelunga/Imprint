@@ -5,7 +5,7 @@
     this.script = document.getElementById("imprint-js");
     this.params = {
         user: script.getAttribute("data-key"),
-        show: script.getAttribute("data-show"),
+        show: (script.getAttribute("data-show") === "true"),
         host: window.location.hostname,
         path: window.location.pathname,
         port: window.location.port
