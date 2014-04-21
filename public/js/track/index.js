@@ -29,6 +29,10 @@
             full_url += "?" + full_params;
         } else if(action == "POST") {
             params.csrf = this.csrf;
+            params.user = this.params.user;
+            params.host = this.params.host;
+            params.path = this.params.path;
+            params.port = this.params.port;
         }
 
         params = encodeURI(params);
@@ -97,7 +101,7 @@
             data = JSON.parse(data);
             _this.csrf = data.csrf;
 
-            if(data.success && data.show) {
+            if(data.success && (this.show || data.show)) {
                 this.insertAssests(data.assests);
                 this.insertContent(data.content);
 
