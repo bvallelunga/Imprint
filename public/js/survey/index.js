@@ -3,8 +3,10 @@ window.Imprint = {
     forEach: Array.prototype.forEach,
     finished: false,
     activate: function(parent, type) {
+        var _this = this;
         this.backdrop = this.$$("#imprint_backdrop")[0];
         this.survey = this.$$("#imprint_survey")[0];
+        this.close = this.$$("#imprint_survey .imprint_close")[0];
         this.type = type;
         this.parent = parent;
 
@@ -12,17 +14,15 @@ window.Imprint = {
             this[type].activate(this);
             this[type].open(this);
         }
+
+        this.forEach.call([this.backdrop, this.close], function(element) {
+            element.onclick = function() {
+                 _this.popup.close(_this);
+            };
+        });
     },
     popup: {
         activate: function(_this) {
-            var close = _this.$$(".imprint_close")[0];
-
-            _this.forEach.call([_this.backdrop, close], function(element) {
-                element.onclick = function() {
-                     _this.popup.close(_this);
-                };
-            });
-
             _this.forEach.call(_this.$$(".imprint_stars span"), function(element, index) {
                 element.onclick = function() {
                      _this.stars.choose(_this, element, (5 - index));
