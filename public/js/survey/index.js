@@ -15,11 +15,17 @@ window.Imprint = {
             this[response.type].open(this);
         }
 
-        this.forEach.call([this.backdrop, this.close], function(element) {
-            element.onclick = function() {
-                 _this.popup.close(_this);
-            };
-        });
+        this.backdrop.onclick = function() {
+            _this.popup.close(_this);
+        };
+
+        this.close.onclick = function() {
+            _this.popup.close(_this);
+
+            _this.parent.request({
+                closed: true
+            }, "POST");
+        };
     },
     popup: {
         activate: function(_this) {
