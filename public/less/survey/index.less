@@ -40,8 +40,8 @@
 #imprint_survey {
     position: fixed;
     z-index: @zindex + 1;
-    overflow: hidden;
     background: transparent;
+    overflow: hidden;
     .border-radius(3px);
     .box-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
     .transition(all);
@@ -65,23 +65,30 @@
     }
 
     .imprint_header {
+        width: 100%;
         padding: 8px 12px;
         color: #fff;
         background: #1EA1D8;
-        border-bottom: solid 1px darken(#1EA1D8, 5%);
+        border: solid 1px darken(#1EA1D8, 10%);
+        .linear-gradient(0deg, darken(#1EA1D8, 2%), #1EA1D8);
+        .box-shadow(inset 0 1px lighten(#1EA1D8, 4%));
+        .border-radius(3px 3px 0 0);
+        .box-sizing(border-box);
         .clearfix();
 
         .imprint_title {
             font-size: 16px;
             margin-top: 1px;
+            text-shadow: 0 -1px rgba(0, 0, 0, 0.4);
             .float-left();
         }
 
         .imprint_close {
             cursor: pointer;
-            font-size: 10px;
+            font-size: 8px;
             padding-top: 4px;
             text-align: center;
+            border: solid 1px rgba(0, 0, 0, 0.1);
             background: darken(#1EA1D8, 10%);
             width: 20px;
             height: 20px;
