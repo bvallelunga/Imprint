@@ -3,33 +3,38 @@ window.Imprint = {
     forEach: Array.prototype.forEach,
     finished: false,
     activate: function(parent, response) {
-        var _this = this;
-        this.backdrop = this.$$("#imprint_backdrop")[0];
-        this.survey = this.$$("#imprint_survey")[0];
-        this.close = this.$$("#imprint_survey .imprint_close")[0];
-        this.response = response;
-        this.parent = parent;
+        if(parent && response) {
+            var _this = this;
+            this.backdrop = this.$$("#imprint_backdrop")[0];
+            this.survey = this.$$("#imprint_survey")[0];
+            this.close = this.$$("#imprint_survey .imprint_close")[0];
+            this.response = response;
+            this.parent = parent;
 
-        if(response.type in this) {
-            this[response.type].activate(this);
-            this[response.type].open(this);
+            if(response.type in this) {
+                this[response.type].activate(this);
+
+                this.backdrop.onclick = function() {
+                    _this.popup.close(_this);
+                };
+
+                this.close.onclick = function() {
+                    _this.popup.close(_this);
+
+                    _this.parent.request({
+                        closed: true
+                    }, "POST");
+                };
+            } else {
+                this.backdrop.remove();
+                this.survey.remove();
+            }
         }
-
-        this.backdrop.onclick = function() {
-            _this.popup.close(_this);
-        };
-
-        this.close.onclick = function() {
-            _this.popup.close(_this);
-
-            _this.parent.request({
-                closed: true
-            }, "POST");
-        };
     },
     popup: {
         activate: function(_this) {
             _this.stars.mouseout(_this);
+            _this[_this.response.type].open(_this);
 
             _this.forEach.call(_this.$$(".imprint_stars span"), function(element, index) {
                 element.onclick = function() {

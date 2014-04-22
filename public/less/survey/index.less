@@ -4,7 +4,7 @@
 @zindex: 999999999;
 
 @-moz-document url-prefix() {
-    .imprint_popup {
+    #imprint_survey {
         .imprint_description {
             font-size: 18px !important;
             margin-top: 7px !important;
@@ -62,10 +62,11 @@
     & > * {
         padding: 0;
         margin: 0;
+        width: 100%;
+        .box-sizing(border-box);
     }
 
     .imprint_header {
-        width: 100%;
         padding: 8px 12px;
         color: #fff;
         background: #1EA1D8;
@@ -73,7 +74,6 @@
         .linear-gradient(0deg, darken(#1EA1D8, 2%), #1EA1D8);
         .box-shadow(inset 0 1px lighten(#1EA1D8, 4%));
         .border-radius(3px 3px 0 0);
-        .box-sizing(border-box);
         .clearfix();
 
         .imprint_title {
