@@ -24,7 +24,6 @@
         }
     },
     "cookies": {
-        "rememberme": "usrr",
         "session": {
             "key": "usrs",
             "secret": "8ucsTLrvSyaKOCpP4oB6kVlqCOU31qt7ZhoX3EqzDymCTX2SqB"
