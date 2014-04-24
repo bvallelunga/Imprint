@@ -10,7 +10,7 @@
         "description": [
             "Imprint gives humanized insights that help drive the evolution of our product."
         ],
-        "default": "/",
+        "default": "/dashboard/",
         "subdomains": [ "", "track" ]
     },
     "development": {

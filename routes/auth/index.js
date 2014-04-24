@@ -1,8 +1,8 @@
 exports.login = function(req, res, next) {
     res.render("auth/login", {
-        title: "Log In",
-        js: req.js.renderTags("auth"),
-        css: req.css.renderTags("auth"),
+        title: "Login",
+        js: req.js.renderTags("core", "auth"),
+        css: req.css.renderTags("core", "auth"),
         next: req.param("next") || ""
     });
 }
@@ -10,8 +10,7 @@ exports.login = function(req, res, next) {
 exports.register = function(req, res, next) {
     res.render("auth/register", {
         title: "Register",
-        js: req.js.renderTags("auth"),
-        css: req.css.renderTags("auth"),
-        next: req.param("next") || ""
+        js: req.js.renderTags("core", "auth"),
+        css: req.css.renderTags("core", "auth")
     });
 }

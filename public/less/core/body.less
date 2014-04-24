@@ -1,0 +1,108 @@
+@import '../compless/all';
+@import './colors';
+
+.form.popup {
+    width: 280px;
+
+    form {
+        overflow: hidden;
+        background: #fff;
+        border: solid 1px darken(@popup, 10%);
+        .box-shadow(~"2px 0 4px rgba(0,0,0,0.05), -2px 0 4px rgba(0,0,0,0.05)");
+        .border-radius(4px);
+
+        .header {
+            color: lighten(@popup, 35%);
+            padding: 10px 0;
+            text-align: center;
+            text-shadow: 0 -1px 0 darken(@popup, 10%);
+            border-bottom: solid 1px darken(@popup, 10%);
+            .linear-gradient(0deg, darken(@popup, 5%), darken(@popup, 3%));
+            .box-shadow(inset 0 1px 0 lighten(@popup, 3%));
+        }
+
+        .info {
+            padding: 15px;
+            background: #FAFAFA;
+            border-bottom: solid 1px darken(@popup_info, 3%);
+
+            .input {
+                width: 100%;
+                font-size: 13px;
+                color: #333;
+                background: #fff;
+                padding: 10px;
+                margin-bottom: 10px;
+                border: solid 1px darken(@popup_info, 5%);
+                .box-shadow(inset 0 1px 3px darken(@popup_info, 2%));
+                .border-radius(2px);
+
+                &:focus {
+                    border: solid 1px spin(lighten(@popup, 10%), 0%);
+                }
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        .submit {
+            padding: 10px 15px;
+            background: lighten(@popup, 55%);
+
+            .button {
+                width: 100%;
+                text-align: center;
+                padding: 8px 0;
+                font-size: 14px;
+                color: #fff;
+                cursor: pointer;
+                text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+                border: solid 1px @popup;
+                .border-radius(2px);
+                .linear-gradient(0deg, @popup, lighten(@popup, 5%));
+
+                &:not(.error):hover {
+                    .linear-gradient(0deg, darken(@popup, 3%), lighten(@popup, 2%));
+
+                    &:active {
+                        .linear-gradient(0deg, darken(@popup, 2%), darken(@popup, 5%));
+                    }
+                }
+
+                &.error {
+                    border: solid 1px darken(@popup_error, 10%);
+                    .linear-gradient(0deg, darken(@popup_error, 5%), darken(@popup_error, 2%));
+
+                    &:hover {
+                        .linear-gradient(0deg, darken(@popup_error, 8%), darken(@popup_error, 5%));
+
+                        &:active {
+                            .linear-gradient(0deg, darken(@popup_error, 11%), darken(@popup_error, 8%));
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .link {
+        color: lighten(@popup, 35%);
+        margin-top: 10px;
+        text-align: center;
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+
+        a {
+            color: lighten(@popup, 45%);
+
+            &:hover {
+                text-decoration: underline;
+
+                &:active {
+                    color: lighten(@popup, 50%);
+                }
+            }
+        }
+    }
+}

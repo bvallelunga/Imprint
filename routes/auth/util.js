@@ -7,6 +7,14 @@ exports.restrict = function(req, res, next) {
     }
 };
 
+exports.redirect = function(req, res, next) {
+    if(req.session.user) {
+        res.redirect(req.param("next") || config.general.default);
+    } else {
+        next();
+    }
+};
+
 exports.xhr = function(req, res, next) {
     if(req.xhr) {
         next();
