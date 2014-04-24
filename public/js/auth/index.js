@@ -1,4 +1,6 @@
 $(function() {
+    $(".popup").hAlign().vAlign();
+
     $("form").submit(function(e) {
         e.preventDefault();
         e.stopPropagation();
