@@ -42,6 +42,9 @@
     },
     "stripe": "",
     "icons": {
+        "user": "fa fa-user",
+        "signout": "fa fa-power-off",
+        "dropdown": "fa fa-angle-down"
     },
     "forever": {
         "uid": "imprint",

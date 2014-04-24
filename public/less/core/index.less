@@ -8,11 +8,8 @@ html {
         margin: 0;
         padding: 0;
         background-color: @body;
-        background-image: url("/img/background.png");
         font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
         min-width: 1077px;
-        min-height: 100%;
-        position: relative;
         .reset-box-model();
         .reset-font();
 
@@ -78,6 +75,11 @@ html {
 
         .right {
             .float-right();
+        }
+
+        .clear {
+            float: none;
+            clear: both;
         }
     }
 }
