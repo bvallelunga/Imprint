@@ -1,12 +1,14 @@
+@import '../compless/all';
+@import '../core/colors';
+
 html body {
-    background: darken(#fff, 5%);
     text-align: center;
 
     .error {
         width: 100%;
-        color: rgba(0, 0, 0, 0.8);
+        color: lighten(@body, 50%);
         font-family: Shift, 'Helvetica Neue', Helvetica, Arial, sans-serif;
         font-size: 64px;
-        text-shadow: 1px 4px 6px darken(#fff, 5%), 0 0 0 #000, 1px 4px 6px darken(#fff, 5%);
+        text-shadow: 0 -2px 0 rgba(0, 0, 0, 0.2);
     }
 }
