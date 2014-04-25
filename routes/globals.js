@@ -63,7 +63,6 @@ module.exports = function(req, res, next) {
     res.locals.site_delimeter = config.general.delimeter.web;
     res.locals.description = config.general.description.join("");
     res.locals.company = config.general.company;
-    res.locals.logo = config.general.logo;
     res.locals.config = {};
     res.locals.icons = config.icons;
     res.locals.user = req.session.user;
