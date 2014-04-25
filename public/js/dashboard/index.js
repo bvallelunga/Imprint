@@ -3,7 +3,9 @@ $(function() {
         var _this = this;
 
         if($(_this).hasClass("activated")) {
-            $(".projects").removeClass("activated");
+            $(".projects .slider").animate({
+                opacity: 0
+            }, 300);
 
             setTimeout(function() {
                 $(_this).removeClass("activated");
@@ -14,7 +16,9 @@ $(function() {
             $(".projects").slideDown(300);
 
             setTimeout(function() {
-                $(".projects").addClass("activated");
+                $(".projects .slider").animate({
+                    opacity: 1
+                }, 300);
             }, 500);
         }
     });

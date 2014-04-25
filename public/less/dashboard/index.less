@@ -172,13 +172,8 @@
         .box-sizing(border-box);
         .clearfix();
 
-        &.activated .slider {
-            opacity: 1;
-        }
-
         .slider {
             opacity: 0;
-            .transition(opacity);
 
             .project {
                 width: 80px;
@@ -195,17 +190,15 @@
                         line-height: 45px;
                         font-size: 32px;
                         font-weight: bold;
-                        border-color: transparent !important;
-                        background: darken(#fff, 12%);
-                        color: darken(#fff, 34%);
+                        border: dashed 3px darken(#fff, 12%);
+                        background: #fff;
+                        color: darken(#fff, 18%);
 
                         &:hover {
-                            background: darken(#fff, 20%);
-                            color: darken(#fff, 42%);
+                            color: lighten(@popup, 24%);
 
                             &:active {
-                                background: darken(#fff, 28%);
-                                color: darken(#fff, 50%);
+                                color: lighten(@popup, 14%);
                             }
                         }
                     }
