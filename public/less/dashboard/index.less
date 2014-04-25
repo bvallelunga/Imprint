@@ -11,6 +11,7 @@
     .border-radius(4px);
 
     .header {
+        position: relative;
         font-size: 14px;
         color: lighten(@popup, 40%);
         padding: 15px;
@@ -20,6 +21,41 @@
         .box-shadow(inset 0 1px 0 lighten(@popup, 3%));
         .box-sizing(border-box);
 
+        .project {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            width: 145px;
+            padding: 6px 8px;
+            color: #fff;
+            font-size: 13px;
+            cursor: pointer;
+            text-shadow: 0 -1px 0 @popup;
+            border: solid 1px darken(@popup, 10%);
+            .linear-gradient(0deg, darken(@popup, 3%), lighten(@popup, 2%));
+            .box-shadow(~"inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 3px rgba(0, 0, 0, 0.1)");
+            .box-sizing(border-box);
+            .border-radius(3px);
+
+            &:hover {
+                .linear-gradient(0deg, darken(@popup, 5%), @popup);
+
+                &:active {
+                    background: lighten(@popup, 2%);
+                    .box-shadow(inset 0 0 1px rgba(0, 0, 0, 0.3));
+                }
+            }
+
+            &.activated {
+                background: lighten(@popup, 2%);
+                .box-shadow(inset 0 0 1px rgba(0, 0, 0, 0.3));
+            }
+
+            span {
+                .float-right();
+            }
+        }
+
         .navigation {
             .float-right();
 
@@ -28,7 +64,7 @@
             }
 
             .links {
-                margin-right: 30px;
+                margin-right: 25px;
                 .clearfix();
 
                 a {
@@ -98,7 +134,7 @@
                         .box-shadow(inset 0 1px 0 lighten(@popup, 4%));
 
                         &:hover {
-                            background: darken(@popup, 5%);
+                            background: darken(@popup, 4%);
                             border-top: solid 1px darken(@popup, 9%);
                             .box-shadow(inset 0 1px 0 darken(@popup, 5%));
 
@@ -122,6 +158,92 @@
                         }
 
                     }
+                }
+            }
+        }
+    }
+
+    .projects {
+        display: none;
+        width: 100%;
+        padding: 15px;
+        background: darken(#fff, 2%);
+        .box-shadow(inset 0 1px 5px rgba(0, 0, 0, 0.2));
+        .box-sizing(border-box);
+        .clearfix();
+
+        &.activated .slider {
+            opacity: 1;
+        }
+
+        .slider {
+            opacity: 0;
+            .transition(opacity);
+
+            .project {
+                width: 80px;
+                margin-right: 15px;
+                .float-left();
+
+                &.activated .display {
+                    border-color: lighten(@popup, 20%);
+                }
+
+                &.create {
+                    .display {
+                        text-align: center;
+                        line-height: 45px;
+                        font-size: 32px;
+                        font-weight: bold;
+                        border-color: transparent !important;
+                        background: darken(#fff, 12%);
+                        color: darken(#fff, 34%);
+
+                        &:hover {
+                            background: darken(#fff, 20%);
+                            color: darken(#fff, 42%);
+
+                            &:active {
+                                background: darken(#fff, 28%);
+                                color: darken(#fff, 50%);
+                            }
+                        }
+                    }
+                }
+
+                .display {
+                    cursor: pointer;
+                    width: 50px;
+                    height: 50px;
+                    margin: 0 auto 5px auto;
+                    overflow: hidden;
+                    background: #fff;
+                    border: solid 3px darken(#fff, 12%);
+                    .border-radius(3px);
+
+                    &:hover {
+                        border-color: lighten(@popup, 30%);
+
+                        &:active {
+                            border-color: lighten(@popup, 20%);
+                        }
+                    }
+
+                    img {
+                        width: 100%;
+                        height: 50px;
+                    }
+
+                }
+
+                .name {
+                    width: 100%;
+                    text-align: center;
+                    font-size: 12px;
+                    font-weight: bold;
+                    text-shadow: 0 1px 0 #fff;
+                    color: darken(#fff, 55%);
+                    .ellipsis();
                 }
             }
         }
