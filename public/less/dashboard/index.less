@@ -136,8 +136,8 @@
 
                         &:hover {
                             background: darken(@popup, 4%);
-                            border-top: solid 1px darken(@popup, 9%);
-                            .box-shadow(inset 0 1px 0 darken(@popup, 5%));
+                            border-top: solid 1px darken(@popup, 8%);
+                            .box-shadow(~"inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 0 2px rgba(0, 0, 0, 0.2)");
 
                             & + a {
                                 border-top: solid 1px darken(@popup, 9%);
@@ -177,51 +177,56 @@
             opacity: 0;
 
             .project {
+                cursor: pointer;
                 width: 80px;
                 margin-right: 15px;
                 .float-left();
 
-                &.activated .display {
-                    border-color: lighten(@popup, 20%);
+                &:hover:not(.activated) {
+                    .name {
+                        color: lighten(@popup, 5%);
+                    }
+
+                    &:active .name {
+                        color: @popup;
+                    }
+                }
+
+                &.activated .name {
+                    color: @popup;
                 }
 
                 &.create {
+                    &:hover {
+                        .display {
+                            color: lighten(@popup, 5%);
+                            border: dashed 3px lighten(@popup, 5%);
+                        }
+
+                        &:active .display {
+                            color: @popup;
+                            border: dashed 3px @popup;
+                        }
+                    }
+
                     .display {
                         text-align: center;
-                        line-height: 45px;
+                        line-height: 38px;
                         font-size: 32px;
                         font-weight: bold;
                         border: dashed 3px darken(#fff, 12%);
-                        background: #fff;
+                        background: darken(#fff, 2%);
                         color: darken(#fff, 18%);
-
-                        &:hover {
-                            color: lighten(@popup, 24%);
-
-                            &:active {
-                                color: lighten(@popup, 14%);
-                            }
-                        }
                     }
                 }
 
                 .display {
-                    cursor: pointer;
                     width: 50px;
                     height: 50px;
-                    margin: 0 auto 5px auto;
+                    margin: 0 auto 6px auto;
                     overflow: hidden;
-                    background: #fff;
-                    border: solid 3px darken(#fff, 12%);
-                    .border-radius(3px);
-
-                    &:hover {
-                        border-color: lighten(@popup, 30%);
-
-                        &:active {
-                            border-color: lighten(@popup, 20%);
-                        }
-                    }
+                    .border-radius(4px);
+                    .box-sizing(border-box);
 
                     img {
                         width: 100%;

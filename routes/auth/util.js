@@ -86,3 +86,16 @@ exports.register = function(req, res, next) {
         }
     });
 };
+
+/* Refresh Session */
+exports.reload = function(req, res, next) {
+    if(req.session.user) {
+        req.models.users.get(req.session.user.id, function(error, user) {
+            if(!error && user) {
+                req.session.user = user;
+            }
+        });
+    }
+
+    next();
+}

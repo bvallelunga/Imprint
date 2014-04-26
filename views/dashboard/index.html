@@ -1,8 +1,8 @@
 <% include ../includes/start.html %>
 <div class="dashboard">
     <div class="header">
-        <div class="project">
-            Laborate
+        <div class="project" data-key="<%= current_project.key %>">
+            <%= current_project.name %>
             <span class="<%= icons.dropdown %>"></span>
         </div>
         <div class="navigation">
@@ -35,18 +35,14 @@
                 <div class="display">+</div>
                 <div class="name">New Project</div>
             </div>
-            <div class="project">
-                <div class="display">
-                    <img src="http://laborate.io/favicon/1000.png"/>
+            <% user.projects.forEach(function(project) { %>
+                <div class="project" data-key="<%= project.key %>" data-name="<%=project.name %>">
+                    <div class="display">
+                        <img src="<%=project.image %>"/>
+                    </div>
+                    <div class="name"><%=project.name %></div>
                 </div>
-                <div class="name">Laborate</div>
-            </div>
-            <div class="project">
-                <div class="display">
-                    <img src="https://github.com/apple-touch-icon-144.png"/>
-                </div>
-                <div class="name">Github</div>
-            </div>
+            <% }); %>
         </div>
     </div>
     <div class="panels">
