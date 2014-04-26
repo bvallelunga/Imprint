@@ -1,7 +1,7 @@
 (function(window, document) {
     /* Defaults */
     this.csrf = "";
-    this.url = "http://localhost/track/v1/";
+    this.url = "http://track.getimprint.io/v1/";
     this.script = document.getElementById("imprint-js");
     this.params = {
         user: script.getAttribute("data-key"),

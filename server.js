@@ -17,6 +17,9 @@ GLOBAL.lib     = require("./lib");
 /* Initialize Lib */
 lib.init(ejs);
 
+/* Install Crontab */
+require("./cron")(__dirname);
+
 /* Express: Configuration */
 app.configure(function() {
     //HTML Engine
