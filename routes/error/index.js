@@ -39,7 +39,7 @@ var error_handler = function(status, message, req, res) {
     }
 
     if(req.xhr) {
-        res.error({
+        res.failure({
             message: error_message
         });
     } else {
@@ -88,7 +88,7 @@ exports.global = function(error, req, res, next) {
 exports.express = function(req, res, next) {
     res.error = function(status, message, error) {
         error_handler(status, message, req, res);
-        req.error.capture(error);
+        lib.error.capture(error);
     }
     next();
 };

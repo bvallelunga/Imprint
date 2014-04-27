@@ -15,11 +15,11 @@ window.Imprint = {
                 this[response.type].activate(this);
 
                 this.backdrop.onclick = function() {
-                    _this.popup.close(_this);
+                    _this.popups.close(_this);
                 };
 
                 this.close.onclick = function() {
-                    _this.popup.close(_this);
+                    _this.popups.close(_this);
 
                     _this.parent.request({
                         closed: true
@@ -31,7 +31,7 @@ window.Imprint = {
             }
         }
     },
-    popup: {
+    popups: {
         activate: function(_this) {
             _this.stars.mouseout(_this);
             _this[_this.response.type].open(_this);

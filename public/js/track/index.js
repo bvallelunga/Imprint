@@ -4,7 +4,7 @@
     this.url = "http://track.getimprint.io/v1/";
     this.script = document.getElementById("imprint-js");
     this.params = {
-        user: script.getAttribute("data-key"),
+        project: script.getAttribute("data-key"),
         show: (script.getAttribute("data-show") === "true"),
         host: window.location.hostname,
         path: window.location.pathname,
