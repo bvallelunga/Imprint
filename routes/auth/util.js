@@ -3,7 +3,7 @@ exports.restrict = function(req, res, next) {
     if(req.session.user) {
         next();
     } else {
-        res.redirect("/login/?next=" + req.url);
+        res.error(404);
     }
 };
 
@@ -23,6 +23,26 @@ exports.xhr = function(req, res, next) {
     }
 }
 
+exports.restrictReload = function(req, res, next) {
+    exports.restrict(req, res, function() {
+       exports.reload(req, res, next);
+    });
+}
+
+exports.restrictXhr = function(req, res, next) {
+    exports.xhr(req, res, function() {
+        exports.restrict(req, res, next);
+    });
+}
+
+exports.restrictReloadXhr = function(req, res, next) {
+    exports.xhr(req, res, function() {
+        exports.restrict(req, res, function() {
+           exports.reload(req, res, next);
+        });
+    });
+}
+
 /* Operations */
 exports.login = function(req, res, next) {
     req.models.users.one({
@@ -33,14 +53,12 @@ exports.login = function(req, res, next) {
             req.session.user = user;
             req.session.save();
 
-            res.json({
-                success: true,
+            res.success({
                 next: req.param("next") || config.general.default
             });
         } else {
-            res.json({
-                success: false,
-                error_message: "Invalid Credentials"
+            res.failure({
+                message: "Invalid Credentials"
             });
         }
     });
@@ -71,15 +89,13 @@ exports.register = function(req, res, next) {
                     req.session.user = user;
                     req.session.save();
 
-                    res.json({
-                        success: true,
+                    res.success({
                         next: req.param("next") || config.general.default
                     });
 
                 } else {
-                    res.json({
-                        success: false,
-                        error_message: "Failed to Register"
+                    res.failure({
+                        message: "Failed to Register"
                     });
                 }
             });
@@ -93,6 +109,7 @@ exports.reload = function(req, res, next) {
         req.models.users.get(req.session.user.id, function(error, user) {
             if(!error && user) {
                 req.session.user = user;
+                req.session.save();
             }
         });
     }

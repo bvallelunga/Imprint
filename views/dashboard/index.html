@@ -1,7 +1,7 @@
 <% include ../includes/start.html %>
 <div class="dashboard">
     <div class="header">
-        <div class="project" data-key="<%= current_project.key %>">
+        <div class="project" data-key="<%= current_project.pub_id %>">
             <%= current_project.name %>
             <span class="<%= icons.dropdown %>"></span>
         </div>
@@ -31,17 +31,17 @@
     </div>
     <div class="projects">
         <div class="slider">
-            <div class="project create">
+            <a class="project create" href="/dashboard/create/">
                 <div class="display">+</div>
                 <div class="name">New Project</div>
-            </div>
+            </a>
             <% user.projects.forEach(function(project) { %>
-                <div class="project" data-key="<%= project.key %>" data-name="<%=project.name %>">
+                <a class="project" href="/dashboard/<%= project.pub_id %>/">
                     <div class="display">
-                        <img src="<%=project.image %>"/>
+                        <img src="<%= project.image %>"/>
                     </div>
                     <div class="name"><%=project.name %></div>
-                </div>
+                </a>
             <% }); %>
         </div>
     </div>

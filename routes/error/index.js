@@ -12,7 +12,7 @@ var error_handler = function(status, message, req, res) {
             break;
         case 402:
             error_message = "Login Required";
-            redirect_url = "/logout/";
+            redirect_url = "/login/?next=" + req.url;
             break;
         case 403:
             error_message = "Access Forbidden";
@@ -63,7 +63,7 @@ var error_handler = function(status, message, req, res) {
                 }
             },
             'application/json': function() {
-                res.error({
+                res.failure({
                     message: error_message
                 });
             }

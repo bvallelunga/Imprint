@@ -1,0 +1,22 @@
+<% include ../includes/start.html %>
+<div class="popup">
+    <form action="/dashboard/create/" autocomplete="off">
+        <div class="header">Create Your First Project!</div>
+        <div class="info">
+            <input name="_csrf" type="hidden" value="<%= csrf %>"/>
+            <input class="input" type="text" name="name" placeholder="name" required="required"/>
+            <input class="input" type="text" name="host" placeholder="website" required="required"/>
+        </div>
+        <div class="submit">
+            <input class="button" type="submit" value="Create Project"/>
+        </div>
+    </form>
+    <div class="link">
+        <% if(!forced) { %>
+            Looking for your dashboard? <a href="/dashboard/">Go here</a>
+        <% } else { %>
+            Done for the day? <a href="/logout/">Sign out</a>
+        <% } %>
+    </div>
+</div>
+<% include ../includes/end.html %>
