@@ -1,7 +1,11 @@
 {
     "general": {
+        "ssl": false,
         "production": false,
-        "port": 80,
+        "ports": {
+            "http": 80,
+            "https": 443
+        },
         "company": "Imprint",
         "delimeter": {
             "web": " · ",

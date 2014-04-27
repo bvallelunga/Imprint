@@ -319,14 +319,11 @@
 
                 .item {
                     padding: 15px;
-                    border-top: solid 1px darken(#fff, 3%);
 
-                    &:first-child {
-                        border: none;
-                    }
-
-                    &:nth-child(:odd) {
-                        background: darken(#fff, 1%);
+                    &:nth-child(even) {
+                        background: darken(#fff, 2%);
+                        border-top: solid 1px darken(#fff, 5%);
+                        border-bottom: solid 1px darken(#fff, 5%);
                     }
 
                     .section {

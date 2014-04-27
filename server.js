@@ -1,10 +1,10 @@
 /* Import NPM Modules */
+var fs         = require("fs");
 var express    = require("express");
 var device     = require("express-device");
 var slashes    = require("connect-slashes");
 var subdomains = require('express-subdomains');
 var app        = express();
-var srv        = require('http').createServer(app);
 var ejs        = require("ejs");
 var RedisStore = require("connect-redis")(express);
 
@@ -13,6 +13,17 @@ GLOBAL.$       = require("jquery");
 GLOBAL.async   = require("async");
 GLOBAL.config  = require("./config");
 GLOBAL.lib     = require("./lib");
+
+/* Create Server */
+if(config.general.ssl) {
+    var srv = require('https').createServer({
+        key: fs.readFileSync('./credentials/imprint.key'),
+        cert: fs.readFileSync('./credentials/imprint.crt'),
+        ca: fs.readFileSync('./credentials/gandi.pem')
+    }, app);
+} else {
+    var srv = require('http').createServer(app);
+}
 
 /* Initialize Lib */
 lib.init(ejs);
@@ -93,7 +104,7 @@ app.configure('development', function() {
 app.configure('production', function() {
     //Last Resort Error Handling
     process.on('uncaughtException', function(exception) {
-        console.error(exception);
+        lib.error.capture(exception);
         return false;
     });
 });
@@ -107,5 +118,14 @@ app.use(app.router);
 //Setup Global Error Handling
 app.use(require("./routes/error").global);
 
-/* Lister To Port */
-srv.listen(config.general.port);
+/* Lister To Server */
+if(config.general.ssl) {
+    srv.listen(config.general.ports.https);
+
+    /* HTTP -> HTTPS Redirect */
+    express().use(function(req, res) {
+        res.redirect("https://" + req.host + req.url);
+    }).listen(config.general.ports.http);
+} else {
+    srv.listen(config.general.ports.http);
+}
