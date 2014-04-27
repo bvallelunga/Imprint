@@ -9,7 +9,8 @@
 <% current_project.rules.forEach(function(rule) { %>
     <div class="rules">
         <div class="rule">
-           <form class="update" action="/dashboard/<%= current_project.pub_id %>/popups/<%= rule.pub_id %>/update/">
+            <a class="icon <%= icons.feedback %>" href="/dashboard/<%= current_project.pub_id %>/popups/<%= rule.pub_id %>/"></a>
+            <form class="update" action="/dashboard/<%= current_project.pub_id %>/popups/<%= rule.pub_id %>/update/">
                 <input placeholder="name" type="text" class="input" name="name" value="<%= rule.name %>" required="required" />
                 <input placeholder="url or *" type="text" class="input" name="path" value="<%= rule.path %>" required="required" />
                 <input placeholder="delay in seconds" type="number" class="input" name="delay" value="<%= rule.delay %>" required="required" />

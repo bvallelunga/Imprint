@@ -44,7 +44,9 @@
     "icons": {
         "user": "fa fa-user",
         "signout": "fa fa-power-off",
-        "dropdown": "fa fa-angle-down"
+        "dropdown": "fa fa-angle-down",
+        "search": "fa fa-search",
+        "feedback": "fa fa-bar-chart-o"
     },
     "forever": {
         "uid": "imprint",

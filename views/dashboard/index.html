@@ -63,9 +63,13 @@
                 </div>
             </div>
         </div>
-        <div class="content <%= page %>">
+        <div class="content <%= subpage || page %>">
             <% if(page == "popups") { %>
-               <% include ./popups.html %>
+                <% if(subpage == "feedback") { %>
+                    <% include ./feedback.html %>
+                <% } else { %>
+                    <% include ./popups.html %>
+                <% } %>
             <% } else if(page == "settings") { %>
                 <% include ./settings.html %>
             <% } %>

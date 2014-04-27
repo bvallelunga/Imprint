@@ -1,0 +1,24 @@
+<% feedbacks.forEach(function(feedback) { %>
+<div class="item">
+    <div class="section">
+        <div class="header">Stars</div>
+        <div class="response">
+            <%= feedback.rating %> <%=: "star" | pluralize:(feedback.rating != 1) %>
+        </div>
+    </div>
+    <% if(!feedback.feedback.empty && feedback.feedback[0]) { %>
+        <div class="section">
+            <div class="header">Response</div>
+            <div class="response">
+                <%= feedback.feedback[0] %>
+            </div>
+        </div>
+    <% } %>
+    <div class="section">
+        <div class="header">Reported</div>
+        <div class="response">
+            <%=: feedback.created | duration %> (<%=: feedback.created | format %>)
+        </div>
+    </div>
+</div>
+<% }); %>
