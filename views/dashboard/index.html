@@ -50,6 +50,7 @@
             <div class="module">
                 <div class="header">Engagement</div>
                 <div class="listing">
+                    <a class="item <%= (page == "popups") ? "activated" : "" %>" href="/dashboard/<%= current_project.pub_id %>/popups/">Popups</a>
                     <a class="item <%= (page == "surveys") ? "activated" : "" %>" href="/dashboard/<%= current_project.pub_id %>/surveys/">Surveys</a>
                     <a class="item <%= (page == "clarify") ? "activated" : "" %>"  href="/dashboard/<%= current_project.pub_id %>/clarify/">Clarify</a>
                     <a class="item <%= (page == "spotlight") ? "activated" : "" %>" href="/dashboard/<%= current_project.pub_id %>/spotlight/">Spotlight</a>
@@ -63,8 +64,8 @@
             </div>
         </div>
         <div class="content <%= page %>">
-            <% if(page == "surveys") { %>
-               <% include ./surveys.html %>
+            <% if(page == "popups") { %>
+               <% include ./popups.html %>
             <% } else if(page == "settings") { %>
                 <% include ./settings.html %>
             <% } %>

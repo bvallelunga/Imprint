@@ -319,11 +319,17 @@
                     .header {
                         color: darken(@popup, 10%);
                         font-size: 16px;
+                        font-weight: bold;
                         margin-bottom: 10px;
                     }
 
-                    code {
+                    .info {
                         font-size: 14px;
+                        color: darken(@popup, 15%);
+                    }
+
+                    code {
+                        font-size: 12px;
                         color: #333;
                         background: #fff;
                         padding: 10px;
@@ -331,11 +337,15 @@
                         border: solid 1px darken(@popup_info, 5%);
                         .box-shadow(inset 0 1px 3px darken(@popup_info, 2%));
                         .border-radius(3px);
+
+                        * {
+                            font-family: Monaco, 'Courier New', Courier, 'Andale Mono', monospace, sans-serif !important;
+                        }
                     }
                 }
             }
 
-            &.surveys {
+            &.popups {
                 .create {
                     padding: 15px;
                     margin: -15px -15px 15px -15px;

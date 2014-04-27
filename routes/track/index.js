@@ -4,8 +4,11 @@ exports.index = function(req, res, next) {
 }
 
 exports.survey = function(req, res, next) {
+
+
+
     req.app.render("surveys/popup", {
-        header: "Hows your experience been?",
+        header: "How's your experience been?",
         placeholder: "your response...",
         button: "Send Feedback"
     }, function(error, content) {

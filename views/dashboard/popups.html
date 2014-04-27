@@ -1,23 +1,23 @@
-<form class="create" action="/dashboard/<%= current_project.pub_id %>/surveys/">
+<form class="create" action="/dashboard/<%= current_project.pub_id %>/popups/">
     <input placeholder="name" type="text" class="input" name="name" required="required"/>
     <input placeholder="url ex: *, checkout" type="text" class="input" name="path" required="required" />
-    <input placeholder="delay in seconds" type="text" class="input" name="delay" required="required" />
-    <input placeholder="hits til valuable" type="text" class="input" name="valuable"required="required" />
+    <input placeholder="delay in seconds" type="number" class="input" name="delay" required="required" />
+    <input placeholder="hits til valuable" type="number" class="input" name="valuable"required="required" />
     <input type="submit" class="button-create" value="create survey" />
     <input name="_csrf" type="hidden" value="<%= csrf %>"/>
 </form>
 <% $.each(current_project.rules, function(key, rule) { %>
     <div class="rules">
         <div class="rule">
-           <form class="update" action="/dashboard/<%= current_project.pub_id %>/surveys/<%= rule.key %>/update/">
+           <form class="update" action="/dashboard/<%= current_project.pub_id %>/popups/<%= key %>/update/">
                 <input placeholder="name" type="text" class="input" name="name" value="<%= rule.name %>" required="required" />
                 <input placeholder="url ex: *, checkout" type="text" class="input" name="path" value="<%= rule.path %>" required="required" />
-                <input placeholder="delay in seconds" type="text" class="input" name="delay" value="<%= rule.delay %>" required="required" />
-                <input placeholder="hits til valuable" type="text" class="input" name="valuable" value="<%= rule.valuable %>" required="required" />
+                <input placeholder="delay in seconds" type="number" class="input" name="delay" value="<%= rule.delay %>" required="required" />
+                <input placeholder="hits til valuable" type="number" class="input" name="valuable" value="<%= rule.valuable %>" required="required" />
                 <input type="submit" class="button-update" value="update" />
                 <input name="_csrf" type="hidden" value="<%= csrf %>"/>
             </form>
-            <form class="remove" action="/dashboard/<%= current_project.pub_id %>/surveys/<%= key %>/remove/">
+            <form class="remove" action="/dashboard/<%= current_project.pub_id %>/popups/<%= key %>/remove/">
                 <input name="_csrf" type="hidden" value="<%= csrf %>"/>
                 <input type="submit" class="button-remove" value="remove" />
             </form>

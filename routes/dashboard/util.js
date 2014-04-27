@@ -14,7 +14,7 @@ exports.create_project = function(req, res, next) {
     }, function(error, project) {
         if(!error && project) {
             res.success({
-                next: "/dashboard/%s/surveys/".sprintf(project.pub_id)
+                next: "/dashboard/%s/popups/".sprintf(project.pub_id)
             });
         } else {
             res.error(200, "Failed to Create Project", error);
@@ -57,12 +57,14 @@ exports.update_rule = function(req, res, next) {
         pub_id: req.param("project")
     }, function(error, project) {
         if(!error && project) {
-            project.rules[req.param("rule")] = {
-                name: req.param("name"),
-                path: req.param("path"),
-                delay: req.param("delay"),
-                valuable: req.param("valuable"),
-                type: req.param("page")
+            if(req.param("rule") in project.rules) {
+                project.rules[req.param("rule")] = {
+                    name: req.param("name"),
+                    path: req.param("path"),
+                    delay: req.param("delay"),
+                    valuable: req.param("valuable"),
+                    type: req.param("page")
+                }
             }
 
             project.save({

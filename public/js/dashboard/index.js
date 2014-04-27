@@ -34,7 +34,7 @@ $(function() {
         $(".header .profile").removeClass("activated");
     });
 
-    $(".surveys").on("submit", "form", function(e) {
+    $(".content.popups").on("submit", "form", function(e) {
         e.preventDefault();
         e.stopPropagation();
 
@@ -42,7 +42,7 @@ $(function() {
 
         $.post($(this).attr("action"), $(this).serialize(), function(response) {
             if(typeof response == "string") {
-                $(".surveys").html(response);
+                $(".content.popups").html(response);
             } else {
                 if(form.hasClass("create")) {
                     form.find(".button-create").val("Failed");

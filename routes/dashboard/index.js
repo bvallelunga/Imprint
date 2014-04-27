@@ -22,10 +22,10 @@ exports.index = function(req, res, next) {
                     page: req.param("page")
                 });
             } else {
-                res.redirect("/dashboard/%s/surveys/".sprintf(current_project.pub_id));
+                res.redirect("/dashboard/%s/popups/".sprintf(current_project.pub_id));
             }
         } else {
-            res.redirect("/dashboard/%s/surveys/".sprintf(projects[0].pub_id));
+            res.redirect("/dashboard/%s/popups/".sprintf(projects[0].pub_id));
         }
     }
 }
