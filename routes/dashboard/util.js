@@ -23,86 +23,100 @@ exports.create_project = function(req, res, next) {
 }
 
 exports.create_rule = function(req, res, next) {
-    req.models.projects.one({
-        pub_id: req.param("project")
-    }, function(error, project) {
-        if(!error && project) {
-            project.rules[project.rule_id()] = {
+    async.waterfall([
+        function(callback) {
+            req.models.projects.one({
+                pub_id: req.param("project")
+            }, callback);
+        },
+        function(project, callback) {
+            req.models.projects.rules.create({
                 name: req.param("name"),
                 path: req.param("path"),
                 delay: req.param("delay"),
                 valuable: req.param("valuable"),
-                type: req.param("page")
-            }
-
-            project.save({
-               rules: JSON.cycle(project.rules)
-            }, function(error, project) {
-                if(!error) {
-                    res.render("dashboard/" + req.param("page"), {
-                        current_project: project
-                    });
-                } else {
-                    res.error(200, null, error);
-                }
+                type: req.param("page"),
+                project_id: project.id
+            }, callback);
+        },
+        function(rule, callback) {
+            req.models.projects.one({
+                pub_id: req.param("project")
+            }, callback);
+        },
+        function(project, callback) {
+            res.render("dashboard/" + req.param("page"), {
+                current_project: project
             });
-        } else {
+
+            callback(null);
+        }
+    ], function(error) {
+        if(error) {
             res.error(200, null, error);
         }
     });
 }
 
 exports.update_rule = function(req, res, next) {
-    req.models.projects.one({
-        pub_id: req.param("project")
-    }, function(error, project) {
-        if(!error && project) {
-            if(req.param("rule") in project.rules) {
-                project.rules[req.param("rule")] = {
-                    name: req.param("name"),
-                    path: req.param("path"),
-                    delay: req.param("delay"),
-                    valuable: req.param("valuable"),
-                    type: req.param("page")
-                }
-            }
-
-            project.save({
-               rules: JSON.cycle(project.rules)
-            }, function(error, project) {
-                if(!error) {
-                    res.render("dashboard/" + req.param("page"), {
-                        current_project: project
-                    });
-                } else {
-                    res.error(200, null, error);
-                }
+    async.waterfall([
+        function(callback) {
+            req.models.projects.rules.one({
+                pub_id: req.param("rule")
+            }, callback);
+        },
+        function(rule, callback) {
+            rule.save({
+                name: req.param("name"),
+                path: req.param("path"),
+                delay: req.param("delay"),
+                valuable: req.param("valuable"),
+                type: req.param("page")
+            }, callback);
+        },
+        function(rule, callback) {
+            req.models.projects.one({
+                pub_id: req.param("project")
+            }, callback);
+        },
+        function(project, callback) {
+            res.render("dashboard/" + req.param("page"), {
+                current_project: project
             });
-        } else {
+
+            callback(null);
+        }
+    ], function(error) {
+        if(error) {
             res.error(200, null, error);
         }
     });
 }
 
 exports.remove_rule = function(req, res, next) {
-    req.models.projects.one({
-        pub_id: req.param("project")
-    }, function(error, project) {
-        if(!error && project) {
-            delete project.rules[req.param("rule")];
-
-            project.save({
-               rules: JSON.cycle(project.rules)
-            }, function(error, project) {
-                if(!error) {
-                    res.render("dashboard/" + req.param("page"), {
-                        current_project: project
-                    });
-                } else {
-                    res.error(200, null, error);
-                }
+    async.waterfall([
+        function(callback) {
+            req.models.projects.rules.one({
+                pub_id: req.param("rule")
+            }, callback);
+        },
+        function(rule, callback) {
+            rule.remove(callback);
+        },
+        function(rule, callback) {
+            req.models.projects.one({
+                pub_id: req.param("project")
+            }, callback);
+        },
+        function(project, callback) {
+            res.render("dashboard/" + req.param("page"), {
+                current_project: project
             });
-        } else {
+
+            callback(null);
+        }
+    ], function(error) {
+        if(error) {
             res.error(200, null, error);
         }
     });

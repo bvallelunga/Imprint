@@ -20,6 +20,7 @@ exports.survey = function(req, res, next) {
                                 res.success({
                                     csrf: (req.csrfToken) ? req.csrfToken() : "",
                                     show: true,
+                                    rule: rule.key,
                                     delay: rule.delay,
                                     type: rule.type,
                                     content: content,

@@ -149,6 +149,7 @@ window.Imprint = {
         _this.$$(".imprint_button")[0].className += " sending";
 
         _this.parent.request({
+            rule: _this.response.rule,
             rating: _this.stars.rating,
             response: _this.$$(".imprint_response")[0].value
         }, "POST", function() {

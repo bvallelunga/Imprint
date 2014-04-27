@@ -6,10 +6,10 @@
     <input type="submit" class="button-create" value="create survey" />
     <input name="_csrf" type="hidden" value="<%= csrf %>"/>
 </form>
-<% $.each(current_project.rules, function(key, rule) { %>
+<% current_project.rules.forEach(function(rule) { %>
     <div class="rules">
         <div class="rule">
-           <form class="update" action="/dashboard/<%= current_project.pub_id %>/popups/<%= key %>/update/">
+           <form class="update" action="/dashboard/<%= current_project.pub_id %>/popups/<%= rule.pub_id %>/update/">
                 <input placeholder="name" type="text" class="input" name="name" value="<%= rule.name %>" required="required" />
                 <input placeholder="url or *" type="text" class="input" name="path" value="<%= rule.path %>" required="required" />
                 <input placeholder="delay in seconds" type="number" class="input" name="delay" value="<%= rule.delay %>" required="required" />
@@ -17,7 +17,7 @@
                 <input type="submit" class="button-update" value="update" />
                 <input name="_csrf" type="hidden" value="<%= csrf %>"/>
             </form>
-            <form class="remove" action="/dashboard/<%= current_project.pub_id %>/popups/<%= key %>/remove/">
+            <form class="remove" action="/dashboard/<%= current_project.pub_id %>/popups/<%= rule.pub_id %>/remove/">
                 <input name="_csrf" type="hidden" value="<%= csrf %>"/>
                 <input type="submit" class="button-remove" value="remove" />
             </form>
