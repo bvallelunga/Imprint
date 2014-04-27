@@ -3,19 +3,19 @@
     this.csrf = "";
     this.url = "//track.getimprint.io/v1/";
     this.script = document.getElementById("imprint-js");
-    this.params = {
-        project: script.getAttribute("data-key"),
-        show: (script.getAttribute("data-show") === "true"),
-        host: window.location.hostname,
-        path: window.location.pathname,
-        port: window.location.port
-    };
 
     /* Library */
     this.request = function(params, action, callback) {
         var xhr,
             full_url = this.url,
             full_params = "";
+
+        params.csrf = this.csrf;
+        params.project = this.script.getAttribute("data-key");
+        params.show = (script.getAttribute("data-show") === "true");
+        params.host = window.location.hostname;
+        params.path = window.location.pathname;
+        params.port = window.location.port;
 
         for (var key in params) {
             if(full_params != "") {
@@ -27,15 +27,7 @@
 
         if(action == "GET") {
             full_url += "?" + full_params;
-        } else if(action == "POST") {
-            params.csrf = this.csrf;
-            params.user = this.params.user;
-            params.host = this.params.host;
-            params.path = this.params.path;
-            params.port = this.params.port;
         }
-
-        params = encodeURI(params);
 
         if(typeof XMLHttpRequest !== 'undefined') {
             xhr = new XMLHttpRequest();
@@ -71,6 +63,12 @@
         }
 
         xhr.open(action, full_url, true);
+
+        if(action != "GET") {
+            full_params = encodeURI(full_params);
+            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+        }
+
         xhr.send(full_params);
     }
 
@@ -118,5 +116,5 @@
     }
 
     /* Initalize */
-    this.request(this.params, "GET", this.handleResponse);
+    this.request({}, "GET", this.handleResponse);
 })(window, document);

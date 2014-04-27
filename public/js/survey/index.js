@@ -153,9 +153,7 @@ window.Imprint = {
             rating: _this.stars.rating,
             response: _this.$$(".imprint_response")[0].value
         }, "POST", function() {
-            setTimeout(function() {
-                _this[_this.response.type].close(_this);
-            }, 1000);
+            _this[_this.response.type].close(_this);
         });
     }
 }
