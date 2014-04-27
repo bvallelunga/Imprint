@@ -21,7 +21,6 @@ exports.index = function(req, res, next) {
                     current_project: current_project,
                     page: req.param("page")
                 });
-
             } else {
                 res.redirect("/dashboard/%s/surveys/".sprintf(current_project.pub_id));
             }

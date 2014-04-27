@@ -266,9 +266,10 @@
 
                 .header {
                     color: darken(@popup, 10%);
-                    font-size: 15px;
+                    font-size: 12px;
                     font-weight: bold;
                     margin-left: 15px;
+                    text-transform: uppercase;
                 }
 
                 .listing {
@@ -312,6 +313,107 @@
             padding: 15px;
             .calc-width(~"100% - 160px");
             .box-sizing(border-box);
+
+            &.settings {
+                .module {
+                    .header {
+                        color: darken(@popup, 10%);
+                        font-size: 16px;
+                        margin-bottom: 10px;
+                    }
+
+                    code {
+                        font-size: 14px;
+                        color: #333;
+                        background: #fff;
+                        padding: 10px;
+                        margin-bottom: 10px;
+                        border: solid 1px darken(@popup_info, 5%);
+                        .box-shadow(inset 0 1px 3px darken(@popup_info, 2%));
+                        .border-radius(3px);
+                    }
+                }
+            }
+
+            &.surveys {
+                .create {
+                    padding: 15px;
+                    margin: -15px -15px 15px -15px;
+                    background: darken(#fff, 2%);
+                    border-bottom: solid 1px darken(#fff, 6%);
+                    .clearfix();
+
+                    .button-create {
+                        margin: 0;
+                        width: 20%;
+                    }
+                }
+
+                .rule {
+                    margin-bottom: 15px;
+                    .clearfix();
+                }
+
+                .input {
+                    font-size: 14px;
+                    padding: 5px 0;
+                    margin: 0 20px 0 0;
+                    color: #333;
+                    background: transparent;
+                    border-bottom: dotted 1px darken(#fff, 15%);
+                    .calc-width(~"20% - 20px");
+                    .box-sizing(border-box);
+                    .float-left();
+
+                    &:focus {
+                        border-color: @popup;
+                    }
+                }
+
+                .button-create, .button-update, .button-remove {
+                    cursor: pointer;
+                    font-size: 14px;
+                    text-align: center;
+                    padding: 5px;
+                    margin: 0 10px 0 0;
+                    color: #fff;
+                    text-transform: capitalize;
+                    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+                    border: solid 1px @popup;
+                    .linear-gradient(0deg, lighten(@popup, 3%), lighten(@popup, 5%));
+                    .box-shadow(inset 0 1px 0 lighten(@popup, 15%));
+                    .calc-width(~"10% - 10px");
+                    .box-sizing(border-box);
+                    .border-radius(2px);
+                    .float-left();
+
+                    &:hover {
+                        border: solid 1px darken(@popup, 5%);
+                        .linear-gradient(0deg, lighten(@popup, 5%), lighten(@popup, 8%));
+                        .box-shadow(inset 0 1px 0 lighten(@popup, 20%));
+
+                        &:active {
+                            .linear-gradient(0deg, lighten(@popup, 8%), lighten(@popup, 5%));
+                        }
+                    }
+
+                    &.button-remove {
+                        width: 10%;
+                        margin: 0;
+                        border: solid 1px darken(@popup_error, 10%);
+                        .box-shadow(inset 0 1px 0 lighten(@popup_error, 10%));
+                        .linear-gradient(0deg, darken(@popup_error, 5%), darken(@popup_error, 2%));
+
+                        &:hover {
+                            .linear-gradient(0deg, darken(@popup_error, 8%), darken(@popup_error, 5%));
+
+                            &:active {
+                                .linear-gradient(0deg, darken(@popup_error, 11%), darken(@popup_error, 8%));
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
