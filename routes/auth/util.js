@@ -108,11 +108,14 @@ exports.reload = function(req, res, next) {
     if(req.session.user) {
         req.models.users.get(req.session.user.id, function(error, user) {
             if(!error && user) {
+                res.locals.user = user;
                 req.session.user = user;
-                req.session.save();
+                req.session.save(next);
+            } else {
+                next();
             }
         });
+    } else {
+        next();
     }
-
-    next();
 }

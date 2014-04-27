@@ -3,14 +3,14 @@
 
 .dashboard {
     width: 1000px;
-    margin: 30px auto;
+    margin: 30px auto 10px auto;
     overflow: hidden;
     background: #fff;
     border: solid 1px darken(@popup, 10%);
     .box-shadow(~"2px 0 4px rgba(0,0,0,0.05), -2px 0 4px rgba(0,0,0,0.05)");
     .border-radius(4px);
 
-    .header {
+    & > .header {
         position: relative;
         font-size: 14px;
         color: lighten(@popup, 40%);
@@ -164,7 +164,7 @@
         }
     }
 
-    .projects {
+    & > .projects {
         display: none;
         width: 100%;
         padding: 15px;
@@ -248,7 +248,7 @@
         }
     }
 
-    .panels {
+    & > .panels {
         position: relative;
 
         .sidebar {
@@ -260,6 +260,48 @@
             background: lighten(@popup, 55%);
             border-right: solid 1px lighten(@popup, 52%);
             .box-sizing(border-box);
+
+            .module {
+                margin: 20px 0;
+
+                .header {
+                    color: darken(@popup, 10%);
+                    font-size: 15px;
+                    font-weight: bold;
+                    margin-left: 15px;
+                }
+
+                .listing {
+                    margin-top: 10px;
+
+                    .item {
+                        cursor: pointer;
+                        font-size: 14px;
+                        padding: 5px 15px;
+                        color: lighten(@popup, 10%);
+                        border-top: solid 1px transparent;
+                        border-bottom: solid 1px transparent;
+                        display: block;
+
+                        &.activated {
+                            color: #fff;
+                            text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+                            border-top: solid 1px @popup;
+                            border-bottom: solid 1px @popup;
+                            .linear-gradient(0deg, lighten(@popup, 3%), lighten(@popup, 5%));
+                            .box-shadow(inset 0 1px 0 lighten(@popup, 8%));
+                        }
+
+                        &:hover:not(.activated) {
+                            color: @popup;
+
+                            &:active {
+                                color: darken(@popup, 10%);
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         .content {
@@ -271,5 +313,21 @@
             .calc-width(~"100% - 160px");
             .box-sizing(border-box);
         }
+    }
+}
+
+.logo {
+    width: 1000px;
+    margin: 0 auto 30px auto;
+    font-size: 24px;
+    font-weight: lighter;
+    color: rgba(255, 255, 255, 0.5);
+
+    img {
+        width: 24px;
+        height: 24px;
+        opacity: 0.5;
+        position: relative;
+        top: 2px;
     }
 }

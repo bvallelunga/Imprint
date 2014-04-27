@@ -36,7 +36,7 @@
                 <div class="name">New Project</div>
             </a>
             <% user.projects.forEach(function(project) { %>
-                <a class="project" href="/dashboard/<%= project.pub_id %>/">
+                <a class="project <%= (project.id == current_project.id) ? "activated" : "" %>" href="/dashboard/<%= project.pub_id %>/">
                     <div class="display">
                         <img src="<%= project.image %>"/>
                     </div>
@@ -46,8 +46,27 @@
         </div>
     </div>
     <div class="panels">
-        <div class="sidebar"></div>
+        <div class="sidebar">
+            <div class="module">
+                <div class="header">Engagement</div>
+                <div class="listing">
+                    <a class="item <%= (page == "surveys") ? "activated" : "" %>" href="/dashboard/<%= current_project.pub_id %>/surveys/">Surveys</a>
+                    <a class="item <%= (page == "clarify") ? "activated" : "" %>"  href="/dashboard/<%= current_project.pub_id %>/clarify/">Clarify</a>
+                    <a class="item <%= (page == "spotlight") ? "activated" : "" %>" href="/dashboard/<%= current_project.pub_id %>/spotlight/">Spotlight</a>
+                </div>
+            </div>
+            <div class="module">
+                <div class="header">Configure</div>
+                <div class="listing">
+                    <a class="item <%= (page == "settings") ? "activated" : "" %>" href="/dashboard/<%= current_project.pub_id %>/settings/">Settings</a>
+                </div>
+            </div>
+        </div>
         <div class="content"></div>
     </div>
+</div>
+<div class="logo">
+    <img src="/img/logo.png"/>
+    Imprint
 </div>
 <% include ../includes/end.html %>
