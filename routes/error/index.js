@@ -6,12 +6,6 @@ var error_handler = function(status, message, req, res) {
     switch(status) {
         case 401:
             error_message = "Login Required";
-            redirect_url = "/logout/";
-            req.session.redirect_url = req.originalUrl;
-            req.session.save();
-            break;
-        case 402:
-            error_message = "Login Required";
             redirect_url = "/login/?next=" + req.url;
             break;
         case 403:

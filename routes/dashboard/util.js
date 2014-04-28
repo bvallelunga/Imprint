@@ -14,7 +14,7 @@ exports.create_project = function(req, res, next) {
     }, function(error, project) {
         if(!error && project) {
             res.success({
-                next: "/dashboard/%s/popups/".sprintf(project.pub_id)
+                next: "/dashboard/%s/settings/".sprintf(project.pub_id)
             });
         } else {
             res.error(200, "Failed to Create Project", error);

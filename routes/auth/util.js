@@ -3,7 +3,7 @@ exports.restrict = function(req, res, next) {
     if(req.session.user) {
         next();
     } else {
-        res.error(404);
+        res.error(401);
     }
 };
 
