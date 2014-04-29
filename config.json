@@ -1,7 +1,7 @@
 {
     "general": {
         "ssl": false,
-        "production": true,
+        "production": false,
         "ports": {
             "http": 80,
             "https": 443
