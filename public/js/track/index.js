@@ -59,6 +59,7 @@
             }
         }
 
+        xhr.withCredentials = true;
         xhr.open(action, full_url, true);
 
         if(action != "GET") {

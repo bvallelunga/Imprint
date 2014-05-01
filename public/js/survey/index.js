@@ -14,17 +14,15 @@ window.Imprint = {
             if(response.type in this) {
                 this[response.type].activate(this);
 
-                this.backdrop.onclick = function() {
-                    _this.popups.close(_this);
-                };
+                this.forEach.call([this.backdrop, this.close], function(element) {
+                    element.onclick = function() {
+                        _this.popups.close(_this);
 
-                this.close.onclick = function() {
-                    _this.popups.close(_this);
-
-                    _this.request({
-                        closed: true
-                    }, "POST");
-                };
+                        _this.request({
+                            closed: true
+                        }, "POST");
+                    };
+                });
             } else {
                 this.backdrop.remove();
                 this.survey.remove();

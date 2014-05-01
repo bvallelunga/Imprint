@@ -1,11 +1,22 @@
+var url = require('fast-url-parser');
+
 module.exports = function(req, res, next) {
+    var referer = url.parse(req.header('Referer'));
+
+    if(referer) {
+        referer = "%s://%s".sprintf([
+            referer._protocol,
+            referer.hostname
+        ]);
+    }
+
     //Set Server Root For Non Express Calls
     req.server = req.protocol + "://" + req.host;
 
     //Header Config
     res.header("Server", config.general.company);
-    res.header('Access-Control-Allow-Credentials', false);
-    res.header('Access-Control-Allow-Origin', "*");
+    res.header('Access-Control-Allow-Credentials', !!referer);
+    res.header('Access-Control-Allow-Origin', referer || req.server);
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
     res.header('Access-Control-Allow-Headers', 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept');
 

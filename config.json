@@ -28,10 +28,7 @@
         }
     },
     "cookies": {
-        "tracking": {
-            "key": "iptt",
-            "session": "8ucsTLrvSyaKasdf4oB6kVlqCOU31qt7ZhoX3EqzDymCTX2SqB"
-        },
+        "tracking": "iptt",
         "session": {
             "key": "usrs",
             "secret": "8ucsTLrvSyaKOCpP4oB6kVlqCOU31qt7ZhoX3EqzDymCTX2SqB"
