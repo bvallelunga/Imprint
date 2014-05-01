@@ -2,7 +2,7 @@
     <input placeholder="name" type="text" class="input" name="name" required />
     <input placeholder="url or *" type="text" class="input" name="path" required />
     <input placeholder="delay in seconds" type="number" class="input" name="delay" required />
-    <input placeholder="hits til valuable" type="number" class="input" name="valuable"required />
+    <input placeholder="views til shown" type="number" class="input" name="valuable" required />
     <input type="submit" class="button-create" value="create survey" />
     <input name="_csrf" type="hidden" value="<%= csrf %>"/>
 </form>
@@ -14,7 +14,7 @@
                 <input placeholder="name" type="text" class="input" name="name" value="<%= rule.name %>" required />
                 <input placeholder="url or *" type="text" class="input" name="path" value="<%= rule.path %>" required />
                 <input placeholder="delay in seconds" type="number" class="input" name="delay" value="<%= rule.delay %>" required />
-                <input placeholder="hits til valuable" type="number" class="input" name="valuable" value="<%= rule.valuable %>" required />
+                <input placeholder="views til shown" type="number" class="input" name="valuable" value="<%= rule.valuable %>" required />
                 <input type="submit" class="button-update" value="update" />
                 <input name="_csrf" type="hidden" value="<%= csrf %>"/>
             </form>
