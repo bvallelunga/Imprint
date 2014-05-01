@@ -1,7 +1,7 @@
 var url = require('fast-url-parser');
 
 module.exports = function(req, res, next) {
-    var referer = url.parse(req.header('Referer'));
+    var referer = url.parse(req.header('Referer') || "");
 
     if(referer) {
         referer = "%s://%s".sprintf([
