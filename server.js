@@ -69,7 +69,15 @@ app.configure(function() {
             client: lib.redis
         })
     }));
-    app.use(express.csrf());
+
+    //Setup CSRF
+    app.use(function(req, res, next) {
+        if(/^\/((?!track).)*$/.exec()) {
+            express.csrf()(req, res, next);
+        } else {
+            next();
+        }
+    });
 
     //Initialize Models
     app.use(lib.models);

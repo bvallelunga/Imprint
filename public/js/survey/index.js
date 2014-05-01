@@ -2,14 +2,14 @@ window.Imprint = {
     $$: document.querySelectorAll.bind(document),
     forEach: Array.prototype.forEach,
     finished: false,
-    activate: function(parent, response) {
+    activate: function(request, response) {
         if(parent && response) {
             var _this = this;
             this.backdrop = this.$$("#imprint_backdrop")[0];
             this.survey = this.$$("#imprint_survey")[0];
             this.close = this.$$("#imprint_survey .imprint_close")[0];
+            this.request = request;
             this.response = response;
-            this.parent = parent;
 
             if(response.type in this) {
                 this[response.type].activate(this);
@@ -21,7 +21,7 @@ window.Imprint = {
                 this.close.onclick = function() {
                     _this.popups.close(_this);
 
-                    _this.parent.request({
+                    _this.request({
                         closed: true
                     }, "POST");
                 };
@@ -148,7 +148,7 @@ window.Imprint = {
         _this.$$(".imprint_button")[0].value = "sending...";
         _this.$$(".imprint_button")[0].className += " sending";
 
-        _this.parent.request({
+        _this.request({
             rule: _this.response.rule,
             rating: _this.stars.rating,
             response: _this.$$(".imprint_response")[0].value

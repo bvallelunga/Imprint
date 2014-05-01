@@ -55,7 +55,7 @@ module.exports = function(req, res, next) {
     }
 
     //Locals
-    res.locals.csrf = req.csrfToken() || "";
+    res.locals.csrf = (req.csrfToken) ? req.csrfToken() : "";
     res.locals.production = config.general.production;
     res.locals.host = req.session.server;
     res.locals.hostname = req.host;

@@ -1,17 +1,15 @@
 (function(window, document) {
     /* Defaults */
-    this.csrf = "";
-    this.url = "//track.getimprint.io/v1/";
-    this.script = document.getElementById("imprint-js");
+    var url = "//track.getimprint.io/v1/";
+    var script = document.getElementById("imprint-js");
 
     /* Library */
-    this.request = function(params, action, callback) {
+    var request = function(params, action, callback) {
         var xhr,
-            full_url = this.url,
+            full_url = url,
             full_params = "";
 
-        params.csrf = this.csrf;
-        params.project = this.script.getAttribute("data-key");
+        params.project = script.getAttribute("data-key");
         params.host = window.location.hostname;
         params.path = window.location.pathname;
         params.port = window.location.port;
@@ -21,7 +19,7 @@
                 full_params += "&";
             }
 
-            full_params += key + "=" + params[key];
+            full_params += key + "=" + encodeURIComponent(params[key]);
         }
 
         if(action == "GET") {
@@ -64,15 +62,13 @@
         xhr.open(action, full_url, true);
 
         if(action != "GET") {
-            full_params = encodeURI(full_params);
-            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         }
 
         xhr.send(full_params);
     }
 
-    this.insertAssests = function(assests) {
+    var insertAssests = function(assests) {
         assests.css.forEach(function(href) {
             var link = document.createElement('link');
             link.href = href;
@@ -88,26 +84,25 @@
         });
     }
 
-    this.insertContent = function(content) {
+    var insertContent = function(content) {
         document.body.innerHTML += content;
     }
 
-    this.handleResponse = function(data) {
+    var handleResponse = function(data) {
         var _this = this;
 
         if(data != false) {
             data = JSON.parse(data);
-            _this.csrf = data.csrf;
 
-            if(data.success && (this.show || data.show)) {
-                this.insertAssests(data.assests);
-                this.insertContent(data.content);
+            if(data.success && data.show) {
+                insertAssests(data.assests);
+                insertContent(data.content);
 
                 var interval = setInterval(function() {
                     if(window.Imprint) {
                         clearInterval(interval);
                         setTimeout(function() {
-                            window.Imprint.activate(_this, data);
+                            window.Imprint.activate(request, data);
                         }, data.delay);
                     }
                 }, 10);
@@ -116,5 +111,5 @@
     }
 
     /* Initalize */
-    this.request({}, "GET", this.handleResponse);
+    request({}, "GET", handleResponse);
 })(window, document);
