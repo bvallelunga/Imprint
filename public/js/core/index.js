@@ -1,5 +1,5 @@
 $(function() {
-    $(".popup").hAlign().vAlign();
+    $(".popup").hAlign().vAlign().show();
 
     $(".popup form").submit(function(e) {
         e.preventDefault();
