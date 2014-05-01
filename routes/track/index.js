@@ -26,12 +26,12 @@ exports.survey = function(req, res, next) {
                                     assests: {
                                         css: $.map(req.css.renderTags("survey").split("\n"), function(script) {
                                             if(script) {
-                                                return req.session.server + $(script).attr("href");
+                                                return req.server + $(script).attr("href");
                                             }
                                         }),
                                         js: $.map(req.js.renderTags("survey").split("\n"), function(script) {
                                             if(script) {
-                                                return req.session.server + $(script).attr("src");
+                                                return req.server + $(script).attr("src");
                                             }
                                         })
                                     },

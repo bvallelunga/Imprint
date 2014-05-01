@@ -56,32 +56,6 @@ app.configure(function() {
     app.use(slashes(true));
     app.use(device.capture());
 
-    //Logger & Cookie
-    app.use(express.logger("dev"));
-    app.use(express.compress());
-    app.use(express.bodyParser());
-    app.use(express.methodOverride());
-    app.use(express.cookieParser(config.cookies.session.secret));
-    app.use(express.session({
-        key: config.cookies.session.key,
-        secret: config.cookies.session.secret,
-        store: new RedisStore({
-            client: lib.redis
-        })
-    }));
-
-    //Setup CSRF
-    app.use(function(req, res, next) {
-        if(/^\/((?!track).)*$/.exec()) {
-            express.csrf()(req, res, next);
-        } else {
-            next();
-        }
-    });
-
-    //Initialize Models
-    app.use(lib.models);
-
     //Setup Subdomains
     async.each(config.general.subdomains, function(subdomain, next) {
         if(subdomain != "") {
@@ -92,6 +66,31 @@ app.configure(function() {
     }, function() {
         app.use(subdomains.middleware);
     });
+
+    //Logger & Cookie
+    app.use(express.logger("dev"));
+    app.use(express.compress());
+    app.use(express.bodyParser());
+    app.use(express.methodOverride());
+    app.use(express.cookieParser(config.cookies.session.secret));
+    app.use(function(req, res, next) {
+        if(/^\/(?!track)/.test(req.url)) {
+            express.session({
+                key: config.cookies.session.key,
+                secret: config.cookies.session.secret,
+                store: new RedisStore({
+                    client: lib.redis
+                })
+            })(req, res, function() {
+                express.csrf()(req, res, next);
+            });
+        } else {
+            next();
+        }
+    });
+
+    //Initialize Models
+    app.use(lib.models);
 
     //Setup Express Error Handling
     app.use(require("./routes/error").express);

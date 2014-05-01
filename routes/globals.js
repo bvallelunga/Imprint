@@ -1,11 +1,6 @@
 module.exports = function(req, res, next) {
     //Set Server Root For Non Express Calls
-    req.session.server = req.protocol + "://" + req.host;
-    req.verified = (req.host.split(".").slice(-2).join(".") == config.general.security);
-
-    if(!config.general.production || !config.random) {
-        config.random = Math.floor((Math.random()*1000000)+1);
-    }
+    req.server = req.protocol + "://" + req.host;
 
     //Header Config
     res.header("Server", config.general.company);
@@ -13,6 +8,12 @@ module.exports = function(req, res, next) {
     res.header('Access-Control-Allow-Origin', "*");
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
     res.header('Access-Control-Allow-Headers', 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept');
+
+
+    //Set Random Number
+    if(!config.general.production || !config.random) {
+        config.random = Math.floor((Math.random()*1000000)+1);
+    }
 
     //Device Info
     var device = req.device.type.toLowerCase();
@@ -57,7 +58,7 @@ module.exports = function(req, res, next) {
     //Locals
     res.locals.csrf = (req.csrfToken) ? req.csrfToken() : "";
     res.locals.production = config.general.production;
-    res.locals.host = req.session.server;
+    res.locals.host = req.server;
     res.locals.hostname = req.host;
     res.locals.title = "";
     res.locals.site_title = config.general.company;
@@ -66,7 +67,7 @@ module.exports = function(req, res, next) {
     res.locals.company = config.general.company;
     res.locals.config = {};
     res.locals.icons = config.icons;
-    res.locals.user = req.session.user;
+    res.locals.user = (req.session) ? req.session.user : {};
     res.locals.title_first = true;
     res.locals.location = req.location;
     res.locals.random = "?rand=" + config.random;
@@ -89,7 +90,4 @@ module.exports = function(req, res, next) {
     } else {
         res.redirect(req.protocol + "://" + req.host.split(".").slice(1).join(".") + req.path);
     }
-
-    //Session Save
-    req.session.save();
 }
