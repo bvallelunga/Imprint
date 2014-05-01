@@ -51,7 +51,8 @@
         "signout": "fa fa-power-off",
         "dropdown": "fa fa-angle-down",
         "search": "fa fa-search",
-        "feedback": "fa fa-bar-chart-o"
+        "feedback": "fa fa-bar-chart-o",
+        "order": "fa fa-ellipsis-v"
     },
     "forever": {
         "uid": "imprint",

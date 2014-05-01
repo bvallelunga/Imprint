@@ -10,7 +10,7 @@ exports.survey = function(req, res, next) {
         }, function(error, project) {
             if(!error && project) {
                 if(project.host == req.param("host")) {
-                    project.rule_engine(req.param("path"), function(show, rule) {
+                    project.rule_engine(req, function(show, rule) {
                         if(show && rule) {
                             req.app.render("surveys/" + rule.type , {
                                 header: "How's your experience been?",

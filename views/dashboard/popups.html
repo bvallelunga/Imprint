@@ -6,8 +6,8 @@
     <input type="submit" class="button-create" value="create survey" />
     <input name="_csrf" type="hidden" value="<%= csrf %>"/>
 </form>
-<% current_project.rules.forEach(function(rule) { %>
-    <div class="rules">
+<div class="rules">
+    <% current_project.rules.forEach(function(rule) { %>
         <div class="rule">
             <a class="icon <%= icons.feedback %>" href="/dashboard/<%= current_project.pub_id %>/popups/<%= rule.pub_id %>/"></a>
             <form class="update" action="/dashboard/<%= current_project.pub_id %>/popups/<%= rule.pub_id %>/update/">
@@ -23,5 +23,5 @@
                 <input type="submit" class="button-remove" value="remove" />
             </form>
         </div>
-    </div>
-<% }); %>
+    <% }); %>
+</div>
