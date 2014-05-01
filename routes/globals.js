@@ -55,7 +55,7 @@ module.exports = function(req, res, next) {
     }
 
     //Locals
-    res.locals.csrf = (req.csrfToken) ? req.csrfToken() : "";
+    res.locals.csrf = req.csrfToken() || "";
     res.locals.production = config.general.production;
     res.locals.host = req.session.server;
     res.locals.hostname = req.host;
@@ -70,8 +70,6 @@ module.exports = function(req, res, next) {
     res.locals.title_first = true;
     res.locals.location = req.location;
     res.locals.random = "?rand=" + config.random;
-    res.locals.type = "website";
-    res.locals.search = "";
     res.locals.logos = {
         "logo":  res.locals.host + "/img/logo.png",
         "graph": res.locals.host + "/favicon/196.png",

@@ -2,7 +2,7 @@
 <div class="dashboard">
     <div class="header">
         <div class="project">
-            <%= current_project.name %>
+            Choose Project
             <span class="<%= icons.dropdown %>"></span>
         </div>
         <div class="navigation">
@@ -36,7 +36,7 @@
                 <div class="name">New Project</div>
             </a>
             <% user.projects.forEach(function(project) { %>
-                <a class="project <%= (project.id == current_project.id) ? "activated" : "" %>" href="/dashboard/<%= project.pub_id %>/">
+                <a class="project" href="/dashboard/<%= project.pub_id %>/">
                     <div class="display">
                         <img src="<%= project.image %>"/>
                     </div>
@@ -48,31 +48,16 @@
     <div class="panels">
         <div class="sidebar">
             <div class="module">
-                <div class="header">Engagement</div>
+                <div class="header">Account</div>
                 <div class="listing">
-                    <a class="item <%= (page == "popups") ? "activated" : "" %>" href="/dashboard/<%= current_project.pub_id %>/popups/">Popups</a>
-                    <a class="item <%= (page == "surveys") ? "activated" : "" %>" href="/dashboard/<%= current_project.pub_id %>/surveys/">Surveys</a>
-                    <a class="item <%= (page == "clarify") ? "activated" : "" %>"  href="/dashboard/<%= current_project.pub_id %>/clarify/">Clarify</a>
-                    <a class="item <%= (page == "spotlight") ? "activated" : "" %>" href="/dashboard/<%= current_project.pub_id %>/spotlight/">Spotlight</a>
-                </div>
-            </div>
-            <div class="module">
-                <div class="header">Configure</div>
-                <div class="listing">
-                    <a class="item <%= (page == "settings") ? "activated" : "" %>" href="/dashboard/<%= current_project.pub_id %>/settings/">Settings</a>
+                    <a class="item <%= (page == "account") ? "activated" : "" %>" href="/account/">Settings</a>
+                    <a class="item <%= (page == "billing") ? "activated" : "" %>" href="/account/billing/">Plans & Billing</a>
+                    <a class="item <%= (page == "payments") ? "activated" : "" %>" href="/account/payments/">Payment History</a>
                 </div>
             </div>
         </div>
-        <div class="content <%= subpage || page %>">
-            <% if(page == "popups") { %>
-                <% if(subpage == "feedback") { %>
-                    <% include ./feedback.html %>
-                <% } else { %>
-                    <% include ./popups.html %>
-                <% } %>
-            <% } else if(page == "settings") { %>
-                <% include ./settings.html %>
-            <% } %>
+        <div class="content <%= page %>">
+
         </div>
     </div>
 </div>

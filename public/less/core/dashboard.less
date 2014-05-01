@@ -1,0 +1,334 @@
+@import '../compless/all';
+@import '../core/colors';
+
+.dashboard {
+    width: 1000px;
+    margin: 30px auto 10px auto;
+    overflow: hidden;
+    background: #fff;
+    border: solid 1px darken(@popup, 10%);
+    .box-shadow(~"2px 0 4px rgba(0,0,0,0.05), -2px 0 4px rgba(0,0,0,0.05)");
+    .border-radius(4px);
+
+    & > .header {
+        position: relative;
+        font-size: 14px;
+        color: lighten(@popup, 40%);
+        padding: 15px;
+        text-shadow: 0 -1px 0 darken(@popup, 10%);
+        border-bottom: solid 1px darken(@popup, 10%);
+        .linear-gradient(0deg, darken(@popup, 5%), darken(@popup, 3%));
+        .box-shadow(inset 0 1px 0 lighten(@popup, 3%));
+        .box-sizing(border-box);
+
+        .project {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            width: 145px;
+            padding: 6px 8px;
+            color: #fff;
+            font-size: 13px;
+            cursor: pointer;
+            text-shadow: 0 -1px 0 @popup;
+            border: solid 1px darken(@popup, 10%);
+            .linear-gradient(0deg, darken(@popup, 3%), lighten(@popup, 2%));
+            .box-shadow(~"inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 3px rgba(0, 0, 0, 0.1)");
+            .box-sizing(border-box);
+            .border-radius(3px);
+
+            &:hover {
+                .linear-gradient(0deg, darken(@popup, 5%), @popup);
+
+                &:active {
+                    background: lighten(@popup, 2%);
+                    .box-shadow(inset 0 0 1px rgba(0, 0, 0, 0.3));
+                }
+            }
+
+            &.activated {
+                background: lighten(@popup, 2%);
+                .box-shadow(inset 0 0 1px rgba(0, 0, 0, 0.3));
+            }
+
+            span {
+                .float-right();
+            }
+        }
+
+        .navigation {
+            .float-right();
+
+            & > div {
+                .float-left();
+            }
+
+            .links {
+                margin-right: 25px;
+                .clearfix();
+
+                a {
+                    margin-left: 15px;
+                    .float-left();
+
+                    &:hover {
+                        color: lighten(@popup, 50%);
+
+                        &:active {
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+
+            .profile {
+                position: relative;
+                margin-right: 5px;
+
+                &.activated {
+                    .name {
+                        color: #fff !important;
+                    }
+
+                    .dropdown {
+                        display: block;
+                    }
+                }
+
+                .name {
+                    position: relative;
+                    z-index: 2;
+                    cursor: pointer;
+                    color: lighten(@popup, 50%);
+
+                    &:hover {
+                        color: lighten(@popup, 55%);
+
+                        &:active {
+                            color: #fff;
+                        }
+                    }
+
+                    span {
+                        margin-left: 2px;
+                    }
+                }
+
+                .dropdown {
+                    position: absolute;
+                    z-index: 1;
+                    top: -8px;
+                    left: -8px;
+                    right: -8px;
+                    padding-top: 30px;
+                    background: @popup;
+                    border: solid 1px darken(@popup, 10%);
+                    overflow: hidden;
+                    display: none;
+                    .border-radius(3px);
+                    .box-shadow(~"inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 2px rgba(0, 0, 0, 0.1)");
+
+                    a {
+                        display: block;
+                        padding: 8px 12px;
+                        border-top: solid 1px darken(@popup, 4%);
+                        .box-shadow(inset 0 1px 0 lighten(@popup, 4%));
+
+                        &:hover {
+                            background: darken(@popup, 4%);
+                            border-top: solid 1px darken(@popup, 8%);
+                            .box-shadow(~"inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 0 2px rgba(0, 0, 0, 0.2)");
+
+                            & + a {
+                                border-top: solid 1px darken(@popup, 9%);
+                            }
+
+                            &:active {
+                                background: darken(@popup, 10%);
+                                border-top: solid 1px darken(@popup, 14%);
+                                .box-shadow(inset 0 1px 0 darken(@popup, 10%));
+
+                                & + a {
+                                    border-top: solid 1px darken(@popup, 14%);
+                                }
+                            }
+                        }
+
+                        span {
+                            margin-right: 5px;
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+
+    & > .projects {
+        display: none;
+        width: 100%;
+        padding: 15px;
+        background: darken(#fff, 2%);
+        .box-shadow(inset 0 1px 5px rgba(0, 0, 0, 0.2));
+        .box-sizing(border-box);
+        .clearfix();
+
+        .slider {
+            opacity: 0;
+
+            .project {
+                cursor: pointer;
+                width: 80px;
+                margin-right: 15px;
+                .float-left();
+
+                &:hover:not(.activated) {
+                    .name {
+                        color: lighten(@popup, 5%);
+                    }
+
+                    &:active .name {
+                        color: @popup;
+                    }
+                }
+
+                &.activated .name {
+                    color: @popup;
+                }
+
+                &.create {
+                    &:hover {
+                        .display {
+                            color: lighten(@popup, 5%);
+                            border: dashed 3px lighten(@popup, 5%);
+                        }
+
+                        &:active .display {
+                            color: @popup;
+                            border: dashed 3px @popup;
+                        }
+                    }
+
+                    .display {
+                        text-align: center;
+                        line-height: 38px;
+                        font-size: 32px;
+                        font-weight: bold;
+                        border: dashed 3px darken(#fff, 12%);
+                        background: darken(#fff, 2%);
+                        color: darken(#fff, 18%);
+                    }
+                }
+
+                .display {
+                    width: 50px;
+                    height: 50px;
+                    margin: 0 auto 6px auto;
+                    overflow: hidden;
+                    .border-radius(4px);
+                    .box-sizing(border-box);
+
+                    img {
+                        width: 100%;
+                        height: 50px;
+                    }
+
+                }
+
+                .name {
+                    width: 100%;
+                    text-align: center;
+                    font-size: 12px;
+                    font-weight: bold;
+                    text-shadow: 0 1px 0 #fff;
+                    color: darken(#fff, 55%);
+                    .ellipsis();
+                }
+            }
+        }
+    }
+
+    & > .panels {
+        position: relative;
+
+        .sidebar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 160px;
+            min-height: 600px;
+            background: lighten(@popup, 55%);
+            border-right: solid 1px lighten(@popup, 52%);
+            .box-sizing(border-box);
+
+            .module {
+                margin: 20px 0;
+
+                .header {
+                    color: darken(@popup, 10%);
+                    font-size: 12px;
+                    font-weight: bold;
+                    margin-left: 15px;
+                    text-transform: uppercase;
+                }
+
+                .listing {
+                    margin-top: 10px;
+
+                    .item {
+                        cursor: pointer;
+                        font-size: 14px;
+                        padding: 5px 15px;
+                        color: lighten(@popup, 10%);
+                        border-top: solid 1px transparent;
+                        border-bottom: solid 1px transparent;
+                        display: block;
+
+                        &.activated {
+                            color: #fff;
+                            text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+                            border-top: solid 1px @popup;
+                            border-bottom: solid 1px @popup;
+                            .linear-gradient(0deg, lighten(@popup, 3%), lighten(@popup, 5%));
+                            .box-shadow(inset 0 1px 0 lighten(@popup, 8%));
+                        }
+
+                        &:hover:not(.activated) {
+                            color: @popup;
+
+                            &:active {
+                                color: darken(@popup, 10%);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .content {
+            position: relative;
+            margin-left: 160px;
+            background: #fff;
+            min-height: 600px;
+            padding: 15px;
+            .calc-width(~"100% - 160px");
+            .box-sizing(border-box);
+        }
+    }
+}
+
+.logo {
+    width: 1000px;
+    margin: 0 auto 30px auto;
+    font-size: 24px;
+    font-weight: lighter;
+    color: rgba(255, 255, 255, 0.5);
+
+    img {
+        width: 24px;
+        height: 24px;
+        opacity: 0.5;
+        position: relative;
+        top: 2px;
+    }
+}

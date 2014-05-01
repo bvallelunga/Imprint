@@ -69,6 +69,7 @@ app.configure(function() {
             client: lib.redis
         })
     }));
+    app.use(express.csrf());
 
     //Initialize Models
     app.use(lib.models);

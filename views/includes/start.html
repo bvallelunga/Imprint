@@ -6,6 +6,33 @@
         <!-- CSS -->
         <%- css %>
 
+        <!-- Site Config -->
+        <script type="text/javascript">
+            window.config = {
+                csrf: "<%= csrf %>",
+                host: "<%= host %>",
+                title: "<%= full_title %>",
+                name: "<%= site_title %>",
+                delimeter: "<%= site_delimeter %>",
+                logo: "<%= logos["500"] + random %>",
+                icons: <%- JSON.stringify(icons) %>,
+                logged_in: <%= !!user %>,
+                user: "<%= (user && !user.fake) ? user.pub_id : "" %>",
+
+                <% $.each(config, function(key, value) { %>
+                    <% if(typeof value == "boolean") { %>
+                        <%= key %>: <%- value %>,
+                    <% } else if(typeof value == "object") { %>
+                        <%= key %>: <%- JSON.stringify(value) %>,
+                    <% } else if(typeof value == "number") { %>
+                        <%= key %>: <%= value %>,
+                    <% } else  { %>
+                        <%= key %>: "<%= value %>",
+                    <% } %>
+                <% }); %>
+            }
+        </script>
+
         <!-- Javascript -->
         <%- js %>
     </head>

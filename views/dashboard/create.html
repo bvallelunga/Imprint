@@ -5,7 +5,13 @@
         Imprint
     </div>
     <form action="/dashboard/create/" autocomplete="off">
-        <div class="header">Create Your First Project!</div>
+        <div class="header">
+            <% if(!forced) { %>
+                Create a New Project!
+            <% } else { %>
+                Create Your First Project!
+            <% } %>
+        </div>
         <div class="info">
             <input name="_csrf" type="hidden" value="<%= csrf %>"/>
             <input class="input" type="text" name="name" placeholder="name" required />

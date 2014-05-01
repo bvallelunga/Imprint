@@ -12,7 +12,7 @@
             "email": " - "
         },
         "description": [
-            "Imprint gives humanized insights that help drive the evolution of our product."
+            "Imprint gives humanized insights that help drive the evolution of your product."
         ],
         "default": "/dashboard/",
         "subdomains": [ "", "track" ]
@@ -28,6 +28,7 @@
         }
     },
     "cookies": {
+        "tracking": "iptt",
         "session": {
             "key": "usrs",
             "secret": "8ucsTLrvSyaKOCpP4oB6kVlqCOU31qt7ZhoX3EqzDymCTX2SqB"
@@ -44,7 +45,7 @@
         "user": "root",
         "password": "imprint"
     },
-    "stripe": "",
+    "stripe": "sk_test_rZr3vAX3CvPebgYnqEwyXUWa",
     "icons": {
         "user": "fa fa-user",
         "signout": "fa fa-power-off",

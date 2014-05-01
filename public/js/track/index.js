@@ -12,7 +12,6 @@
 
         params.csrf = this.csrf;
         params.project = this.script.getAttribute("data-key");
-        params.show = (script.getAttribute("data-show") === "true");
         params.host = window.location.hostname;
         params.path = window.location.pathname;
         params.port = window.location.port;
@@ -66,7 +65,8 @@
 
         if(action != "GET") {
             full_params = encodeURI(full_params);
-            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
         }
 
         xhr.send(full_params);

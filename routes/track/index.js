@@ -18,7 +18,7 @@ exports.survey = function(req, res, next) {
                                 button: "Send Feedback"
                             }, function(error, content) {
                                 res.success({
-                                    csrf: (req.csrfToken) ? req.csrfToken() : "",
+                                    csrf: req.csrfToken() || "",
                                     show: true,
                                     rule: rule.pub_id,
                                     delay: rule.delay,
