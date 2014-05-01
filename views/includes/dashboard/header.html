@@ -1,0 +1,50 @@
+<%
+    if(typeof current_project == "undefined") {
+        current_project = { name: "Choose Project" };
+    }
+%>
+<div class="header">
+    <div class="project">
+        <%= current_project.name %>
+        <span class="<%= icons.dropdown %>"></span>
+    </div>
+    <div class="navigation">
+        <div class="links">
+            <a href="/help/">Help Center</a>
+            <a href="/contact/?email=support">Email Support</a>
+        </div>
+        <div class="profile">
+            <div class="name">
+                <span class="text"><%= user.name %></span>
+                <span class="icon <%= icons.dropdown %>"></span>
+            </div>
+            <div class="dropdown">
+                <a href="/account/">
+                    <span class="<%= icons.user %>"></span>
+                    Account
+                </a>
+                <a href="/logout/">
+                    <span class="<%= icons.signout %>"></span>
+                    Sign Out
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="projects">
+    <div class="slider">
+        <a class="project create" href="/dashboard/create/">
+            <div class="display">+</div>
+            <div class="name">New Project</div>
+        </a>
+        <% user.projects.forEach(function(project) { %>
+            <a class="project <%= (project.id == current_project.id) ? "activated" : "" %>" href="/dashboard/<%= project.pub_id %>/">
+                <div class="display">
+                    <img src="<%= project.image %>"/>
+                </div>
+                <div class="name"><%=project.name %></div>
+            </a>
+        <% }); %>
+    </div>
+</div>

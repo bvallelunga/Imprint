@@ -1,50 +1,6 @@
 <% include ../includes/start.html %>
 <div class="dashboard">
-    <div class="header">
-        <div class="project">
-            Choose Project
-            <span class="<%= icons.dropdown %>"></span>
-        </div>
-        <div class="navigation">
-            <div class="links">
-                <a href="/help/">Help Center</a>
-                <a href="/contact/?email=support">Email Support</a>
-            </div>
-            <div class="profile">
-                <div class="name">
-                    <%= user.name %>
-                    <span class="<%= icons.dropdown %>"></span>
-                </div>
-                <div class="dropdown">
-                    <a href="/account/">
-                        <span class="<%= icons.user %>"></span>
-                        Account
-                    </a>
-                    <a href="/logout/">
-                        <span class="<%= icons.signout %>"></span>
-                        Sign Out
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="clear"></div>
-    </div>
-    <div class="projects">
-        <div class="slider">
-            <a class="project create" href="/dashboard/create/">
-                <div class="display">+</div>
-                <div class="name">New Project</div>
-            </a>
-            <% user.projects.forEach(function(project) { %>
-                <a class="project" href="/dashboard/<%= project.pub_id %>/">
-                    <div class="display">
-                        <img src="<%= project.image %>"/>
-                    </div>
-                    <div class="name"><%=project.name %></div>
-                </a>
-            <% }); %>
-        </div>
-    </div>
+    <% include ../includes/dashboard/header.html %>
     <div class="panels">
         <div class="sidebar">
             <div class="module">
@@ -61,8 +17,5 @@
         </div>
     </div>
 </div>
-<div class="logo">
-    <img src="/img/logo.png"/>
-    Imprint
-</div>
+<% include ../includes/dashboard/logo.html %>
 <% include ../includes/end.html %>

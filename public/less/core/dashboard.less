@@ -101,6 +101,7 @@
                     z-index: 2;
                     cursor: pointer;
                     color: lighten(@popup, 50%);
+                    .clearfix();
 
                     &:hover {
                         color: lighten(@popup, 55%);
@@ -110,7 +111,12 @@
                         }
                     }
 
-                    span {
+                    .text {
+                        min-width: 90px;
+                        display: inline-block;
+                    }
+
+                    .icon {
                         margin-left: 2px;
                     }
                 }
