@@ -19,7 +19,9 @@
                 full_params += "&";
             }
 
-            full_params += key + "=" + encodeURIComponent(params[key]);
+            if(params[key]) {
+                full_params += key + "=" + encodeURIComponent(params[key]);
+            }
         }
 
         if(action == "GET") {
@@ -52,7 +54,7 @@
                 if(xhr.readyState < 4 || xhr.status !== 200) {
                     return callback(false);
                 } else if(xhr.readyState === 4) {
-                    return callback(xhr.responseText);
+                    return callback(xhr.response);
                 } else {
                     return callback(false);
                 }
@@ -61,6 +63,7 @@
 
         xhr.withCredentials = true;
         xhr.open(action, full_url, true);
+        xhr.responseType = "json";
 
         if(action != "GET") {
             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -93,8 +96,6 @@
         var _this = this;
 
         if(data != false) {
-            data = JSON.parse(data);
-
             if(data.success && data.show) {
                 insertAssests(data.assests);
                 insertContent(data.content);
