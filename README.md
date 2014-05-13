@@ -6,4 +6,4 @@ Time Taken to Code: 16 hours
 
 Number of Coders on Team: 1 (Me)
 
-![Imprint](https://raw.githubusercontent.com/bvallelunga/imprint/master/screenshot.png)
+![Imprint](https://github.com/bvallelunga/imprint/raw/master/screenshot.png)
