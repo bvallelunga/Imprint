@@ -1,6 +1,6 @@
 {
     "general": {
-        "ssl": false,
+        "ssl": true,
         "production": true,
         "ports": {
             "http": 80,
@@ -8,7 +8,7 @@
         },
         "company": "Imprint",
         "delimeter": {
-            "web": " · ",
+            "web": " B7 ",
             "email": " - "
         },
         "description": [
