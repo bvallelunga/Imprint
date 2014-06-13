@@ -1,6 +1,6 @@
 {
     "general": {
-        "ssl": true,
+        "ssl": false,
         "production": true,
         "ports": {
             "http": 80,
