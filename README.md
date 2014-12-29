@@ -1,5 +1,3 @@
-## [Imprint](https://github.com/bvallelunga/Imprint)
-
 **Hackathon:** Santa Cruz Tech Raising
 
 **Date:** April 18, 2014
