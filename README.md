@@ -1,11 +1,15 @@
-Imprint is the project I used to compete in the TechRaising hackathon.
+## [Imprint](https://github.com/bvallelunga/Imprint)
 
-Acknowlodeged as a liked project. Competition did not award winners. 
+**Hackathon:** Santa Cruz Tech Raising
 
-Time taken to code: 16 hours
+**Date:** April 18, 2014
 
-Number of team members: 2
+**Placed:** Acknowledged as a liked project. Competition did not award winners.
 
-Number of coders on the team: 1
+**Coding Time:** 16 hours
+
+**Team Members:** 2
+
+**Description:** Web analytics made for people, not robots!
 
 ![Imprint](https://github.com/bvallelunga/imprint/raw/master/screenshot.png)
